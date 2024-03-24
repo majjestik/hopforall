@@ -1,0 +1,289 @@
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
+
+:root {
+    --navy-blue: #00668d;
+    --primary: #0d6efd;
+    --dark: #212529;
+    --dark-grey: #343a40;
+    --black: #242424;
+    --warning: #ffc107;
+    --montserrat-reg: Montserrat-Regular;
+    --montserrat-sm: Montserrat-SemiBold;
+    --montserrat-b: Montserrat-Bold;
+    --montserrat-x: Montserrat-ExtraBold;
+}
+
+/* GENERIC CLASSES */
+.italic {
+    font-style: italic;
+}
+
+.semi-bold {
+    font-weight: 545;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.montserrat-reg {
+    font-family: var(--montserrat-reg);
+}
+
+.montserrat-b {
+    font-family: var(--montserrat-b);
+}
+
+.montserrat-sm {
+    font-family: var(--montserrat-sm);
+}
+
+.montserrat-x {
+    font-family: var(--montserrat-x);
+}
+
+.spacer {
+    letter-spacing: 1px;
+}
+
+    /* IN CASE YOU WANT TO USE BG IMAGE ON BODY */
+    
+    /* background-image: url(../img/wallpaper.jpg);
+    background-color: #e2e2e2;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+
+    
+body {
+    overflow-x: hidden;
+    height: 5000px;
+    font-family: var(--montserrat-reg), sans-serif;
+}
+
+.bg-img {
+    background-color: #e2e2e2;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8);
+}
+
+
+/* NAVBAR STYLING STARTS HERE */
+
+#meine-navbar {
+    transition: all 0.5s;
+}
+
+#logo-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#hop-logo-img {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0 10px 0 0;
+    z-index: 1;
+    /* position: absolute; */
+}
+
+#meine-navbar .navbar-brand {
+    color: #208ab4;
+    font-weight: 700;
+    /* font-style: italic; */
+    letter-spacing: 1px;
+    font-family: var(--montserrat-x);
+}
+
+#meine-navbar .nav-link {
+    color: #efefef;
+    font-weight: 700;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out 200ms;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: var(--montserrat-sm), sans-serif;
+}
+
+#meine-navbar .nav-link:hover {  
+    border-bottom: 2px solid #ffc107;
+}
+
+#meine-navbar .active {
+    border-bottom: 3px solid #ffc107;
+    font-family: var(--montserrat-b);
+}
+
+#meine-navbar .active:hover {
+    border-bottom: 3px solid #ffc107;
+    border-radius: 5px;
+}
+
+#meine-navbar li:hover {
+    cursor: pointer;
+}
+
+#hop-logo-img {
+    width: 80px;
+    height: fit-content;
+}
+
+.donate-btn {
+    border-radius: 60px;
+    padding: 6px 28px;
+    border: 2px solid #ecc30b;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ecc30b;
+    transition: ease-in-out 500ms;
+}
+
+.donate-btn:hover {
+    background-color: #2b2c30;
+    color: #e2e2e2;
+}
+
+/* MAIN STYLING STARTS HERE */
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+    text-align: center;
+    color: #e2e2e2;
+}
+
+#welcome-text {
+    font-family: var(--montserrat-x);
+    font-size: 70px;
+    letter-spacing: 1;
+    text-align: center;
+}
+
+#welcome p {
+    max-width: 80%;
+    margin: auto;
+    text-align: justify;
+    color: #ffffff;
+    font-family: var(--montserrat-reg);
+}
+
+#second-section {
+    position: absolute;
+    top: calc(100vh);
+    width: 100%;
+}
+
+.membre-btn {
+    border-radius: 60px;
+    padding: 6px 28px;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--primary);
+    transition: ease-in-out 500ms;
+}
+
+.membre-btn:hover {
+    background-color: #2b2c30;
+    color: #e2e2e2;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+#newsletter {
+    font-family: var(--montserrat-reg);
+}
+
+
+
+@media (min-width: 768px) {
+    .newsletter-input {
+        width: 50%;
+        font-size: 16px;
+    }
+
+    #newsletter h3 {
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    #meine-navbar {
+        height: auto;
+        min-height: fit-content;
+    }
+
+    #navmenu {
+        min-height: fit-content;
+    }
+
+    #welcome {
+        height: calc(100vh - 130px);
+    }
+
+    #welcome-text {
+        font-size: 25px;
+    }
+    
+    #welcome p {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    #visits .card-title {
+        font-size: 20px;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    #meine-navbar .nav-link {
+        font-size: 11px;
+    }
+}
