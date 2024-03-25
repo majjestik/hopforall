@@ -47,7 +47,7 @@ if(lg.matches) {
 
 
 
-/* CODE FOR SLIDER CAROUSEL 
+/* CODE FOR SLIDER CAROUSEL */
 
 var multipleCardCarousel = document.querySelector("#carouselSliderControls");
 
@@ -83,4 +83,4 @@ if (window.matchMedia("(min-width: 768px)").matches) {
     });
 } else {
     $(multipleCardCarousel).addClass("slide");
-} */
+}
