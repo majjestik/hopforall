@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/aos.css">
-    <title>Accueil - HOP for All</title>
+    <title>ACCUEIL - HOP for All</title>
 </head>
 <body>
     <!-- BG IMAGE -->
@@ -83,8 +83,8 @@
 
             <section id="charitable" class="bg-light text-dark p-5 text-center text-lg-start">
                 <div class="container-fluid">
-                    <div class="d-md-flex align-items-center justify-content-between">
-                        <div>
+                    <div class="row gap-5 align-items-center justify-content-between">
+                        <div class="col-md pt-5">
                             <h1 class="montserrat-sm" data-aos="fade-up-right" data-aos-duration="2000" 
                                 data-aos-anchor-placement="bottom-bottom"
                             >
@@ -96,7 +96,7 @@
                                 Partage ton pain avec celui qui a faim, et fais entrer dans ta maison les malheureux sans asile; Si tu vois un homme nu, couvre-le, et ne te détourne pas de ton semblable.
                             </p>
                             <span class="italic bold spacer">Ésaïe 58:7</span>
-                            <div class="d-md-flex my-4 justify-content-evenly"
+                            <div class="d-md-flex mt-5 justify-content-evenly"
                                 data-aos="zoom-in" data-aos-duration="1000"
                             >
                                 <button class="btn btn-md d-none d-md-block membre-btn my-4 my-md-0" >
@@ -111,9 +111,11 @@
                                 <button class="btn btn-md d-block d-md-none w-100 donate-btn">Faire un don</button>
                             </div>
                         </div>
-                        <img src="./img/hop-logo.jpg" alt="Logo Hop en HD" class="img-fluid w-50 d-none d-lg-block" data-aos="fade-left" data-aos-duration="2000"
+                        <div class="col-md">
+                            <img src="./img/hop-logo.jpg" alt="Logo Hop en HD" class="img-fluid w-100" data-aos="fade-left" data-aos-duration="2000"
                             data-aos-easing="ease-in-sine"
-                        >
+                            >
+                        </div>
                     </div>
                 </div>
             </section>
@@ -198,7 +200,9 @@
             <section id="third-section" class="p-5 my-5">
                 <div class="container">
                     <div class="row text-center gap-4">
-                        <div class="col-md">
+                        <div class="col-md" data-aos="zoom-out" data-aos-duration="1000"
+                            data-aos-easing="ease-in-sine"
+                        >
                             <h3 class="text-center montserrat-b text-uppercase">Vision</h3>
                             <div class="card bg-dark text-light">
                                 <div class="card-body">
@@ -212,7 +216,9 @@
                             </div>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col-md" data-aos="zoom-out" data-aos-duration="1800"
+                            data-aos-easing="ease-in-sine"
+                        >
                             <h3 class="text-center montserrat-b text-uppercase">Mission</h3>
                             <div class="card bg-primary text-light">
                                 <div class="card-body">
@@ -226,7 +232,9 @@
                             </div>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col-md" data-aos="zoom-out" data-aos-duration="2300"
+                            data-aos-easing="ease-in-sine"
+                        >
                             <h3 class="text-center montserrat-b text-uppercase">Valeurs</h3>
                             <div class="card bg-warning text-dark">
                                 <div class="card-body">
@@ -243,7 +251,330 @@
                 </div>
             </section>
 
+            <section id="section-4">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <h3 id="block-title">Nos causes</h3>
+                            <div class="block-title-underline"></div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center justify-content-between" id="carousel-row">
+                        <div id="carouselExampleCaptions" class="carousel slide"
+                            data-bs-ride="carousel"
+                        >
+                            <div class="carousel-indicators">
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
+                                <div class="carousel-caption d-none d-md-block text-warning">
+                                  <h5 class="montserrat-b">Ma cause</h5>
+                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question first slide.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
+                                <div class="carousel-caption d-none d-md-block text-warning">
+                                  <h5 class="montserrat-b">SMa cause</h5>
+                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question second slide.</p>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
+                                <div class="carousel-caption d-none d-md-block text-warning">
+                                  <h5 class="montserrat-b">Ma cause</h5>
+                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question third slide.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                              <span class="bg-dark carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                              <span class="bg-dark carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row text-justify w-75 mx-auto">
+                        <p class="my-5">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis laboriosam vero ratione veritatis quidem, cum, alias voluptatum eligendi facilis fugiat tenetur consequuntur dignissimos, nemo quia itaque ducimus nobis labore.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
+            <section id="section-6" class="my-5 bg-light-blue p-5">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <h3 id="block-title">Nos projets</h3>
+                            <div class="block-title-underline"></div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md">
+                            <p class="montserrat-reg text-center">
+                                Depuis sa création, à l’échelle mondiale, plusieurs projets ont ainsi été réalisés par l'Association Hop for ALL pour près de ... millions de FCFA (routes et ponts, réseaux d’adduction d’eau, lignes électriques, habitations…) 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 my-3 my-lg-0">
+                            <a href="">
+                                <div class="card">
+                                    <img src="./img/sample.jpg" alt=""class="card-img-top">
+
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title my-3 montserrat-b text-uppercase">
+                                            Okola : Des champs d'action...
+                                        </h6>
+                                        <p>
+                                            Le programme de développement initié par...
+                                        </p>
+                                        <small class="italic">
+                                            25 Mars 2024 - <span class="text-primary">Projets</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 my-3 my-lg-0">
+                            <a href="">
+                                <div class="card">
+                                    <img src="./img/sample.jpg" alt=""class="card-img-top">
+
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title my-3 montserrat-b text-uppercase">
+                                            Okola : Des champs d'action...
+                                        </h6>
+                                        <p>
+                                            Le programme de développement initié par...
+                                        </p>
+                                        <small class="italic">
+                                            25 Mars 2024 - <span class="text-primary">Projets</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4 my-3 my-lg-0">
+                            <a href="">
+                                <div class="card">
+                                    <img src="./img/sample.jpg" alt=""class="card-img-top">
+
+                                    <div class="card-body text-center">
+                                        <h6 class="card-title my-3 montserrat-b text-uppercase">
+                                            Okola : Des champs d'action...
+                                        </h6>
+                                        <p>
+                                            Le programme de développement initié par...
+                                        </p>
+                                        <small class="italic">
+                                            25 Mars 2024 - <span class="text-primary">Projets</span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-7">
+                <div class="container p-5">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <h3 id="block-title">Nos partenaires</h3>
+                            <div class="block-title-underline"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                        <div class="col-md-3 col-lg-2 mb-5">
+                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-8" class="bg-light-yellow">
+                <div class="container p-5">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <h3 id="block-title">Actualités - evenements</h3>
+                            <div class="block-title-underline"></div>
+                        </div>
+                    </div>
+                    <!-- SLIDER CAROUSEL -->
+                    <div id="carouselExampleControls" class="carousel"
+                        data-bs-ride="carousel"
+                    >
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="..." class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title 2</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            data-bs-target="#carouselExampleControls" data-bs-slide="prev"
+                        >
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            data-bs-target="#carouselExampleControls" data-bs-slide="next"
+                        >
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </section>
+
+            <section id="section-9">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-md">
+                            <h3 id="block-title">Nos partenaires</h3>
+                            <div class="block-title-underline"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 
@@ -267,6 +598,7 @@
 
 
 
+    <script src="./js/jquery.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/aos.js"></script>

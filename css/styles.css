@@ -22,6 +22,9 @@
 :root {
     --navy-blue: #00668d;
     --primary: #0d6efd;
+    --light-blue: #d9f2ff;
+    --light-red: #ffbac1;
+    --light-yellow: #ffdb6f;
     --dark: #212529;
     --dark-grey: #343a40;
     --black: #242424;
@@ -69,6 +72,18 @@
     letter-spacing: 1px;
 }
 
+.bg-light-blue {
+    background-color: var(--light-blue);
+}
+
+.bg-light-red {
+    background-color: var(--light-red);
+}
+
+.bg-light-yellow {
+    background-color: var(--light-yellow);
+}
+
     /* IN CASE YOU WANT TO USE BG IMAGE ON BODY */
     
     /* background-image: url(../img/wallpaper.jpg);
@@ -82,7 +97,6 @@
     
 body {
     overflow-x: hidden;
-    height: 5000px;
     font-family: var(--montserrat-reg), sans-serif;
 }
 
@@ -234,6 +248,36 @@ body {
     font-family: var(--montserrat-reg);
 }
 
+#block-title {
+    text-transform: uppercase;
+    font-family: var(--montserrat-b);
+}
+
+.block-title-underline {
+    background-color: var(--navy-blue);
+    height: 5px;
+    max-width: 100px;
+    margin-bottom: 35px;
+}
+
+#section-6 a {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+#section-6 .card {
+    transition: all 500ms;
+}
+
+#section-6 .card:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+#section-6 p {
+    margin-bottom: 5px;
+}
+
 
 
 @media (min-width: 768px) {
@@ -244,6 +288,47 @@ body {
 
     #newsletter h3 {
         font-size: 25px;
+    }
+
+    #section-8 .carousel-inner {
+        display: flex;
+    }
+        
+    #section-8 .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+    }
+
+    #section-8 .carousel-inner{
+        padding: 1em;
+    }
+    
+    #section-8 .card{
+        margin: 0 .5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+    }
+    
+    #section-8 .carousel-control-prev, .carousel-control-next{
+        background-color: #e1e1e1;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #section-8 .card .img-wrapper {
+        max-width: 100%;
+        height: 13em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    #section-8 img{
+        max-height: 100%;
     }
 }
 
