@@ -117,6 +117,11 @@ body {
 
 #meine-navbar {
     transition: all 0.5s;
+    z-index: 5;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
 }
 
 #logo-div {
@@ -278,6 +283,17 @@ body {
     margin-bottom: 5px;
 }
 
+#section-8 .card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#section-8 img{
+    max-height: 100%;
+}
 
 
 @media (min-width: 768px) {
@@ -310,25 +326,13 @@ body {
         border: none;
     }
     
-    #section-8 .carousel-control-prev, .carousel-control-next{
-        background-color: #e1e1e1;
+    #section-8 .carousel-control-prev, #section-8 .carousel-control-next{
+        background-color: #242424;
         width: 6vh;
         height: 6vh;
         border-radius: 50%;
         top: 50%;
         transform: translateY(-50%);
-    }
-
-    #section-8 .card .img-wrapper {
-        max-width: 100%;
-        height: 13em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-    #section-8 img{
-        max-height: 100%;
     }
 }
 

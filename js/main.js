@@ -45,3 +45,42 @@ if(lg.matches) {
     }); 
 }
 
+
+
+/* CODE FOR SLIDER CAROUSEL 
+
+var multipleCardCarousel = document.querySelector("#carouselSliderControls");
+
+if (window.matchMedia("(min-width: 768px)").matches) {
+    var carousel = new bootstrap.Carousel(multipleCardCarousel, 
+    {
+        interval: false
+    });
+    
+    var carouselWidth = $("#section-8 .carousel-inner")[0].scrollWidth;
+    var cardWidth = $("#section-8 .carousel-item").width();
+    var scrollPosition = 0;
+
+
+    $(".carousel-control-next").on("click", function () {
+        if(scrollPosition < (carouselWidth - (cardWidth * 4))) {
+            console.log('next');
+            scrollPosition += cardWidth;  //update scroll position
+            $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
+        }
+        
+        
+    });
+    
+    $(".carousel-control-prev").on("click", function () {
+        if(scrollPosition > 0) {
+            console.log('prev');
+            scrollPosition -= cardWidth;  //update scroll position
+            $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
+        }
+        
+        
+    });
+} else {
+    $(multipleCardCarousel).addClass("slide");
+} */
