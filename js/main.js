@@ -84,3 +84,51 @@ if (window.matchMedia("(min-width: 768px)").matches) {
 } else {
     $(multipleCardCarousel).addClass("slide");
 }
+
+/* HOP FOR ALL SECTION FOR "READ MORE" */
+
+const visionHidden = document.getElementById('vision-card-plus');
+const missionHidden = document.getElementById('mission-card-plus');
+const valeurHidden = document.getElementById('valeur-card-plus');
+const visionChev = document.getElementById('vision-chev');
+const missionChev = document.getElementById('mission-chev');
+const valeurChev = document.getElementById('valeur-chev');
+let visionIndex = 0;
+let missionIndex = 0;
+let valeurIndex = 0;
+
+visionChev.onclick = function visionFunc() {
+    if(visionIndex == 0) {
+        visionHidden.classList.replace('d-none', 'd-block');
+        visionChev.classList.replace('bi-chevron-double-down', 'bi-chevron-double-up');
+        visionIndex++;
+    } else {
+        visionHidden.classList.replace('d-block', 'd-none');
+        visionIndex--;
+        visionChev.classList.replace('bi-chevron-double-up', 'bi-chevron-double-down');
+    }
+}
+
+missionChev.onclick = function missionFunc() {
+    if(missionIndex == 0) {
+        missionHidden.classList.replace('d-none', 'd-block');
+        missionChev.classList.replace('bi-chevron-double-down', 'bi-chevron-double-up');
+        missionIndex++;
+    } else {
+        missionHidden.classList.replace('d-block', 'd-none');
+        missionIndex--;
+        missionChev.classList.replace('bi-chevron-double-up', 'bi-chevron-double-down');
+    }
+}
+
+valeurChev.onclick = function valeurFunc() {
+    if(valeurIndex == 0) {
+        valeurHidden.classList.replace('d-none', 'd-block');
+        valeurChev.classList.replace('bi-chevron-double-down', 'bi-chevron-double-up');
+        valeurIndex++;
+    } else {
+        valeurHidden.classList.replace('d-block', 'd-none');
+        valeurIndex--;
+        valeurChev.classList.replace('bi-chevron-double-up', 'bi-chevron-double-down');
+    }
+}

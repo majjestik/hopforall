@@ -250,6 +250,10 @@ body {
     object-fit: cover;
 }
 
+#hopforall-sect .card i {
+    cursor: pointer;
+}
+
 #newsletter {
     font-family: var(--montserrat-reg);
 }
