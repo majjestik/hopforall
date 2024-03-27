@@ -124,6 +124,12 @@ body {
     width: 100%;
 }
 
+#meine-navbar-2 {
+    transition: all 0.5s;
+    z-index: 5;
+    width: 100%;
+}
+
 #logo-div {
     display: flex;
     justify-content: space-evenly;
@@ -158,21 +164,32 @@ body {
     font-family: var(--montserrat-sm), sans-serif;
 }
 
-#meine-navbar .nav-link:hover {  
+#meine-navbar-2 .nav-link {
+    color: var(--primary);
+    font-weight: 700;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out 200ms;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: var(--montserrat-sm), sans-serif;
+}
+
+#meine-navbar .nav-link:hover, #meine-navbar-2 .nav-link:hover {  
     border-bottom: 2px solid #ffc107;
 }
 
-#meine-navbar .active {
+#meine-navbar .active, #meine-navbar-2 .active {
     border-bottom: 3px solid #ffc107;
     font-family: var(--montserrat-b);
 }
 
-#meine-navbar .active:hover {
+#meine-navbar .active:hover, #meine-navbar-2 .active:hover {
     border-bottom: 3px solid #ffc107;
     border-radius: 5px;
 }
 
-#meine-navbar li:hover {
+#meine-navbar li:hover, #meine-navbar-2 li:hover {
     cursor: pointer;
 }
 
