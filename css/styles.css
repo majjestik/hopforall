@@ -254,6 +254,10 @@ body {
     cursor: pointer;
 }
 
+#carousel-row {
+    margin-top: 120px;
+}
+
 #newsletter {
     font-family: var(--montserrat-reg);
 }
