@@ -132,3 +132,4 @@ valeurChev.onclick = function valeurFunc() {
         valeurChev.classList.replace('bi-chevron-double-up', 'bi-chevron-double-down');
     }
 }
+

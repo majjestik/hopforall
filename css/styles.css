@@ -165,7 +165,7 @@ body {
 }
 
 #meine-navbar-2 .nav-link {
-    color: var(--primary);
+    color: var(--navy-blue);
     font-weight: 700;
     border: none;
     border-bottom: 2px solid transparent;
@@ -349,6 +349,58 @@ footer i {
     margin: 12px 0;
 }
 
+/* HOPFORALL PAGE */
+#hopforall #menu-tab ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+#hopforall #menu-tab li {
+    border: 1px solid var(--dark-grey);
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: var(--montserrat-sm);
+    font-size: 14px;
+    margin-right: 2px;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+    text-align: center;
+    transition: all ease-in-out 200ms;
+}
+
+#hopforall #menu-tab li:hover {
+    cursor: pointer;
+}
+
+#hopforall #menu-tab a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#hopforall #text-tab {
+    border: 1px solid var(--dark-grey);
+    margin-top: -17px;
+}
+
+.active-tab {
+    background-color: #ecc30b;
+    font-weight: bold;
+}
+
+#header-wrapper {
+    background-image: url('../img/header.JPG');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    z-index: -1;
+}
+
 
 @media (min-width: 768px) {
     .newsletter-input {
@@ -426,6 +478,26 @@ footer i {
 
     #section-4 h5 {
         font-size: 18px;
+    }
+
+    /* HOPFORALL PAGE */
+    #hopforall #menu-tab ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hopforall #menu-tab li {
+        border: 1px solid var(--dark-grey);
+        padding: 10px;
+        text-transform: uppercase;
+        font-family: var(--montserrat-sm);
+        font-size: 12px;
+        border-radius: 0;
+        text-align: center;
+        transition: all ease-in-out 500ms;
+        margin: 1px 0;
+        width: 100%;
     }
 }
 

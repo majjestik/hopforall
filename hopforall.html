@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <title> - HOP FOR ALL</title>
+    <title>HOP FOR ALL - HOP FOR ALL</title>
 </head>
 <body>
     <!-- NAVBAR  -->
@@ -30,16 +30,16 @@
                         <a href="./index.html" class="nav-link mt-4 mt-md-0 ">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hopforall.html" class="nav-link">HOP FOR ALL</a>
+                        <a href="./hopforall.html" class="nav-link active">HOP FOR ALL</a>
                     </li>
                     <li class="nav-item">
-                        <a href="ressources.html" class="nav-link">Ressources</a>
+                        <a href="./ressources.html" class="nav-link">Ressources</a>
                     </li>
                     <li class="nav-item">
-                        <a href="membre.html" class="nav-link">Espace membre</a>
+                        <a href="./membre.html" class="nav-link">Espace membre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="nav-link active">Contactez-nous</a>
+                        <a href="./contact.html" class="nav-link">Contactez-nous</a>
                     </li>
                 </ul>
                 
@@ -56,24 +56,54 @@
     <main class="montserrat-reg">
 
         <section id="page-title" class="bg-light-blue">
-            <div class="container text-center p-4">
+            <div class="container text-center p-4" id="header-wrapper">
+                <!-- <img src="./img/header.JPG" alt="Header image" id="header-img"> -->
                 <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-md-6 col-lg-4 p-5">
+                    <div class="col-md-6 p-5">
                         <h1 class="text-uppercase montserrat-sm" style="border: 2px solid #00668b;">
-                            
+                            HOP FOR ALL
                         </h1>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="hopforall">
+            <div class="container-fluid p-5">
+                <div id="main-content">
+                    <div id="menu-tab" class="">
+                        <ul id="menu-wrap">
+                            <li class="active-tab" id="about-item">
+                                <a href="#about-text" id="about-link">Qui sommes-nous</a>
+                            </li>
+                            <li id="causes-item">
+                                <a href="#causes-text"id="causes-link">Nos causes</a>
+                            </li>
+                            <li id="what-item">
+                                <a href="#what-text"id="what-link">Que faisons-nous</a>
+                            </li>
+                            <li id="docs-item">
+                                <a href="#docs-text"id="docs-link">Documents institutionnels</a>
+                            </li>
+                            <li id="partner-item">
+                                <a href="#partner-text"id="partner-link">Nos partenaires</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="text-tab" class="p-5">
+                        <div id="about-text" class="d-block">Qui sommes-nous</div>
+                        <div id="causes-text" class="d-none">Nos Causes</div>
+                        <div id="what-text" class="d-none">Que faisons-nous</div>
+                        <div id="docs-text" class="d-none">Documents institutionnels</div>
+                        <div id="partner-text" class="d-none">Nos partenaires</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-
-
+        
     </main>
-
-
 
 
 
@@ -105,7 +135,7 @@
 
 
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/hopforall.js"></script>
     
 </body>
 </html>
