@@ -29,6 +29,7 @@
     --dark-grey: #343a40;
     --black: #242424;
     --warning: #ffc107;
+    --yellowish: #ecc30b;
     --montserrat-reg: Montserrat-Regular;
     --montserrat-sm: Montserrat-SemiBold;
     --montserrat-b: Montserrat-Bold;
@@ -201,11 +202,12 @@ body {
 .donate-btn {
     border-radius: 60px;
     padding: 6px 28px;
-    border: 2px solid #ecc30b;
+    border: 2px solid var(--primary);
     text-align: center;
     font-weight: bold;
-    background-color: #ecc30b;
+    background-color: var(--primary);
     transition: ease-in-out 500ms;
+    color: white;
 }
 
 .donate-btn:hover {
