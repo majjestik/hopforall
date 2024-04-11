@@ -30,6 +30,7 @@
     --black: #242424;
     --warning: #ffc107;
     --yellowish: #ecc30b;
+    --danger: #dc3545;
     --montserrat-reg: Montserrat-Regular;
     --montserrat-sm: Montserrat-SemiBold;
     --montserrat-b: Montserrat-Bold;
@@ -336,6 +337,20 @@ footer a {
 
 footer i {
     font-size: 35px;
+}
+
+#contact-icons a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+#contact-icons i {
+    font-size: 25px;
+    transition: all ease-in-out 250ms;
+}
+
+#contact-icons i:hover {
+    color: var(--danger);
 }
 
 .copyright {
