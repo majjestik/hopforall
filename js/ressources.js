@@ -6,18 +6,21 @@ const menuBlock = document.querySelectorAll('#menu-tab li');
 const linksBlock = document.querySelectorAll('#menu-tab a');
 // 
 const docText = document.getElementById('doc-text');
-const rapportText = document.getElementById('rapport-text');
-const gallerieText = document.getElementById('gallerie-text');
+const eventText = document.getElementById('event-text');
+const projetText = document.getElementById('projet-text');
+const galerieText = document.getElementById('galerie-text');
 const faqText = document.getElementById('faq-text');
 // 
 const docItem = document.getElementById('doc-item');
-const rapportItem = document.getElementById('rapport-item');
-const gallerieItem = document.getElementById('gallerie-item');
+const eventItem = document.getElementById('event-item');
+const projetItem = document.getElementById('projet-item');
+const galerieItem = document.getElementById('galerie-item');
 const faqItem = document.getElementById('faq-item');
 // 
 const docLink = document.getElementById('doc-link');
-const rapportLink = document.getElementById('rapport-link');
-const gallerieLink = document.getElementById('gallerie-link');
+const eventLink = document.getElementById('event-link');
+const projetLink = document.getElementById('projet-link');
+const galerieLink = document.getElementById('galerie-link');
 const faqLink = document.getElementById('faq-link');
 
 menuBlock.forEach( (e) => {
@@ -34,20 +37,27 @@ menuBlock.forEach( (e) => {
                 docItem.classList.add('active-tab');
                 docText.classList.replace('d-none', 'd-block');
 
-            } else if(clickedItem === "rapport-link") {
+            } else if(clickedItem === "event-link") {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
-                rapportItem.classList.add('active-tab');
-                rapportText.classList.replace('d-none', 'd-block');
-            } else if(clickedItem === "gallerie-link") {
+                eventItem.classList.add('active-tab');
+                eventText.classList.replace('d-none', 'd-block');
+            } else if(clickedItem === "projet-link") {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
-                gallerieItem.classList.add('active-tab');
-                gallerieText.classList.replace('d-none', 'd-block');
+                projetItem.classList.add('active-tab');
+                projetText.classList.replace('d-none', 'd-block');
+            } else if(clickedItem === "galerie-link") {
+                for(i = 0; i < menuBlock.length; i++) {
+                    menuBlock[i].classList.remove('active-tab');
+                    textBlock[i].classList.replace('d-block', 'd-none');
+                }
+                galerieItem.classList.add('active-tab');
+                galerieText.classList.replace('d-none', 'd-block');
             } else if(clickedItem === "faq-link"){
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
