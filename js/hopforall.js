@@ -30,7 +30,7 @@ menuBlock.forEach( (e) => {
             console.log(clickedItem);
             
             if(clickedItem === "about-link") {
-                for(i = 0; i < menuBlock.length; i++) {
+                for(i = 0; i < 5; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
@@ -38,36 +38,35 @@ menuBlock.forEach( (e) => {
                 aboutText.classList.replace('d-none', 'd-block');
 
             } else if(clickedItem === "causes-link") {
-                for(i = 0; i < menuBlock.length; i++) {
+                for(i = 0; i < 4; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
                 causesItem.classList.add('active-tab');
                 causesText.classList.replace('d-none', 'd-block');
             } else if(clickedItem === "what-link") {
-                for(i = 0; i < menuBlock.length; i++) {
+                for(i = 0; i < 4; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
                 whatItem.classList.add('active-tab');
                 whatText.classList.replace('d-none', 'd-block');
             } else if(clickedItem === "docs-link"){
-                for(i = 0; i < menuBlock.length; i++) {
+                for(i = 0; i < 4; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
                 docsItem.classList.add('active-tab');
                 docsText.classList.replace('d-none', 'd-block');
             } else if(clickedItem === "partner-link") {
-                for(i = 0; i < menuBlock.length; i++) {
+                for(i = 0; i < 4; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
                 partnerItem.classList.add('active-tab');
                 partnerText.classList.replace('d-none', 'd-block');
-            } 
-            else {
-                for(i = 0; i < menuBlock.length; i++) {
+            } else {
+                for(i = 0; i < 4; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
