@@ -1,7 +1,7 @@
 
 // CODE FOR ALTERNATING TEXT VISIBILTY ON CLICK IN HOPFORALL PAGE
 
-const textBlock = document.querySelectorAll('#text-tab div');
+const textBlock = document.querySelectorAll('#text-tab section');
 const menuBlock = document.querySelectorAll('#menu-tab li');
 const linksBlock = document.querySelectorAll('#menu-tab a');
 // 
