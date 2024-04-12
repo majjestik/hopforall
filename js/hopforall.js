@@ -65,7 +65,8 @@ menuBlock.forEach( (e) => {
                 }
                 partnerItem.classList.add('active-tab');
                 partnerText.classList.replace('d-none', 'd-block');
-            } else {
+            } 
+            else {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
