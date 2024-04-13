@@ -457,6 +457,10 @@ footer i {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    #events-block .card, #special-block .card {
+        height: 100%;
+    }
 }
 
 
