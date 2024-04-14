@@ -78,4 +78,9 @@ menuBlock.forEach( (e) => {
 });
 
 
+lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'disableScrolling': true
+})
 
