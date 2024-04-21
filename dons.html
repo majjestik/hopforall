@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/dons.css">
     <title> FAIRE UN DON - HOP FOR ALL</title>
 </head>
 <body>
@@ -39,7 +40,7 @@
                         <a href="membre.html" class="nav-link">Espace membre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="nav-link active">Contactez-nous</a>
+                        <a href="./contact.html" class="nav-link">Contactez-nous</a>
                     </li>
                 </ul>
                 
@@ -85,12 +86,9 @@
                     </div>
 
                     <div class="col-md">
-                        <p class="h5 montserrat-sm mt-3">
-                            Vos coordonnées
-                        </p>
-                        <form action="" method="post" class="col-lg-10 offset-lg-1 p-5 montserrat-sm mt-5"
-                            style="border: 2px solid #818181; border-radius: 10px;"
-                        >
+                        
+                        <form class="col-lg-10 offset-lg-1" id="form1">
+                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Vos coordonnées</h5>
                             <div class="row">
                                 <div class="col-lg-2 mb-4">
                                     <label for="civilite" class="form-label">Civilité</label>
@@ -131,6 +129,17 @@
                                     <input type="pays" placeholder="Pays" class="form-control">
                                 </div>
                             </div>
+                            
+                            <br>
+                            <div class="mb-3">
+                                <button class="btn btn-primary float-right" type="button" id="next1">
+                                    Suivant
+                                </button>
+                            </div>
+                        </form>
+
+                        <form id="form2" class="col-lg-10 offset-lg-1">
+                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations supplémentaires</h5>
                             <div class="col-lg-12 mb-4">
                                 <label for="raison" class="form-label">
                                     Comment avez-vous entendu parlé de HOP FOR ALL et pourquoi faire un don ?
@@ -164,7 +173,65 @@
                                 <input type="checkbox" name="destination" id="destination" value="projet" class="form-check-input mb-3 mx-2"> Projet et gestion de l'association <br>
                                 <input type="checkbox" name="destination" id="destination" value="autres" class="form-check-input mb-3 mx-2"> Autres <br>
                             </div>
-                            <br><br>
+
+                            <div class="mb-5">
+                                <button class="btn btn-primary float-right" type="button" id="next2">Suivant</button>
+                                <button class="btn btn-danger float-right mx-4" type="button" id="prev1">Précédent</button>
+                            </div>
+                        </form>
+
+                        <form id="form3" class="col-lg-10 offset-lg-1">
+                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations des comptes</h5>
+                            <div class="row text-center my-5">
+                                <p class="text-center italic mb-5">
+                                    Pour les dons en espèces, veuillez utiliser les moyens d'envoi d'argent avec les informations ci-dessous !
+                                </p>
+                                <br>
+                                <div class="col-md-6">
+                                    <h6 class="text-uppercase mb-4 text-danger">Western union / MoneyGram</h6>
+                                
+                                    <p class="">
+                                        Nom : <span class="text-uppercase">Dingao Romain</span>
+                                    </p>
+                                    <p class="">
+                                        Tél : (+237) 693 - 964 - 714
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <h6 class="text-uppercase mb-4 text-primary">MTN Mobile Money</h6>
+                                
+                                    <p class="">
+                                        Nom : <span class="text-uppercase">Dingao Romain</span>
+                                    </p>
+                                    <p class="">
+                                        Tél : (+237) 672 - 315 - 904
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <p class="text-center italic mb-5">
+                                    Pour toutes autres formes de dons, veuillez nous <a href="contact.html"> contacter </a>  par email ou à notre boîte postale !
+                                </p>
+                            </div>
+                            <br>
+                            <div class="mb-5">
+                                <button class="btn btn-primary float-right" type="button" id="next3">Suivant</button>
+                                <button class="btn btn-danger float-right mx-4" type="button" id="prev2">Précédent</button>
+                            </div>
+                        </form>
+
+                        <form action="" id="form4" class="col-lg-10 offset-lg-1">
+                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Validation du don</h5>
+                            <br>
+                            <p class="text-center italic mb-5">
+                                Veuillez entrer l'ID de votre transaction ou le Numéro du bordereau de votre transaction à l'étape précédente !
+                            </p>
+                            <div class="col-md my-5">
+                                <label for="transacid" class="form-label">ID de la transaction</label>
+                                <input type="text" class="form-control" placeholder="ID de la transaction" id="transacid">
+                            </div>
                             <div class="col-md mb-4">
                                 <input type="checkbox" id="anonyme" name="anonyme" class="form-check-input mx-2">
                                 <label for="anonyme">Je souhaite rester anonyme</label>
@@ -173,13 +240,13 @@
                                 <input type="checkbox" id="news" name="news" class="form-check-input mx-2">
                                 <label for="news">Je souhaite recevoir régulièrement des newsletter</label>
                             </div>
-                            <br><br>
-                            <div class="row justify-content-center align-items-center">
-                                <button class="btn btn-lg btn-primary w-75" type="submit" id="submit">
-                                    <i class="bi bi-send mx-3"></i> Envoyer
-                                </button>
+                            <br>
+                            <div class="mb-5">
+                                <button class="btn btn-primary float-right" type="button" id="submit">Envoyer</button>
+                                <button class="btn btn-danger float-right mx-4" type="button" id="prev3">Précédent</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -221,7 +288,7 @@
 
 
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/dons.js"></script>
     
 </body>
 </html>
