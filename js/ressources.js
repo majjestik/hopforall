@@ -32,7 +32,14 @@ menuBlock.forEach( (e) => {
             let clickedItem = i.target.id;
             console.log(clickedItem);
             
-            if(clickedItem === "doc-link") {
+            if(clickedItem === "event-link") {
+                for(i = 0; i < menuBlock.length; i++) {
+                    menuBlock[i].classList.remove('active-tab');
+                    textBlock[i].classList.replace('d-block', 'd-none');
+                }
+                eventItem.classList.add('active-tab');
+                eventText.classList.replace('d-none', 'd-block');
+            } else if(clickedItem === "doc-link") {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
@@ -40,13 +47,6 @@ menuBlock.forEach( (e) => {
                 docItem.classList.add('active-tab');
                 docText.classList.replace('d-none', 'd-block');
 
-            } else if(clickedItem === "event-link") {
-                for(i = 0; i < menuBlock.length; i++) {
-                    menuBlock[i].classList.remove('active-tab');
-                    textBlock[i].classList.replace('d-block', 'd-none');
-                }
-                eventItem.classList.add('active-tab');
-                eventText.classList.replace('d-none', 'd-block');
             } else if(clickedItem === "projet-link") {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
@@ -80,8 +80,8 @@ menuBlock.forEach( (e) => {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');
                 }
-                docItem.classList.add('active-tab');
-                docText.classList.replace('d-none', 'd-block');
+                eventItem.classList.add('active-tab');
+                eventText.classList.replace('d-none', 'd-block');
             }
         }
     });
