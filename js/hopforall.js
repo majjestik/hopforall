@@ -10,18 +10,21 @@ const causesText = document.getElementById('causes-text');
 const whatText = document.getElementById('what-text');
 const docsText = document.getElementById('docs-text');
 const partnerText = document.getElementById('partner-text');
+const organigramText = document.getElementById('organigram-text');
 // 
 const aboutItem = document.getElementById('about-item');
 const causesItem = document.getElementById('causes-item');
 const whatItem = document.getElementById('what-item');
 const docsItem = document.getElementById('docs-item');
 const partnerItem = document.getElementById('partner-item');
+const organigramItem = document.getElementById('organigram-item');
 // 
 const aboutLink = document.getElementById('about-link');
 const causesLink = document.getElementById('causes-link');
 const whatLink = document.getElementById('what-link');
 const docsLink = document.getElementById('docs-link');
 const partnerLink = document.getElementById('partner-link');
+const organigramLink = document.getElementById('organigram-link');
 
 menuBlock.forEach( (e) => {
     e.addEventListener("click", (i) => {
@@ -65,6 +68,13 @@ menuBlock.forEach( (e) => {
                 }
                 partnerItem.classList.add('active-tab');
                 partnerText.classList.replace('d-none', 'd-block');
+            } else if(clickedItem === "organigram-link") {
+                for(i = 0; i < menuBlock.length; i++) {
+                    menuBlock[i].classList.remove('active-tab');
+                    textBlock[i].classList.replace('d-block', 'd-none');
+                }
+                organigramItem.classList.add('active-tab');
+                organigramText.classList.replace('d-none', 'd-block');
             } else {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
