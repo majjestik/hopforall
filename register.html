@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/connect.css">
-    <title>SE CONNECTER - HOP FOR ALL</title>
+    <title>S'INSCRIRE - HOP FOR ALL</title>
 </head>
 <body>
     <!-- NAVBAR  -->
@@ -59,31 +59,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <form action="" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
-                        <h4 class=" mb-4 text-center text-uppercase montserrat-b"> Se connecter</h4>
+
+                    <!-- SIGN UP FORM -->
+
+                    <form action="" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm my-5" id="form2">
+                        <h5 class=" mb-4 text-center text-uppercase montserrat-b"> S'inscrire</h5>
+                        <div class="col-md-12 mb-4">
+                            <label for="" class="form-label">Nom</label>
+                            <input type="texxt" class="form-control" placeholder="Nom">
+                        </div>
+                        <div class="col-md-12 mb-4">
+                            <label for="" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" placeholder="Prénom">
+                        </div>
                         <div class="col-md-12 mb-4">
                             <label for="" class="form-label">Email</label>
                             <input type="email" class="form-control" placeholder="Email">
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 mb-4">
                             <label for="" class="form-label">Mot de passe</label>
                             <input type="password" class="form-control" placeholder="Mot de passe ********">
                         </div>
-
-                        <div class="my-4">
-                            <a href="forgotpwd.html" class="">Mot de passe oublié ?</a>
+                        <div class="col-md-12">
+                            <label for="" class="form-label">Confirmer le mot de passe</label>
+                            <input type="password" class="form-control" placeholder="Mot de passe ********">
                         </div>
 
-                        <div class="col-md-12 mb-4 d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-lg btn-primary" id="connect-btn">Se connecter</button>
+                        <div class="col-md-12 my-5 d-flex justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-lg btn-primary" id="register-btn">S'inscrire</button>
                         </div>
                         <p>
-                            Vous n'êtes pas encore membre,  
-                            <a href="register.html" id="signup-btn">inscrivez-vous ici</a>
+                            Vous êtes Déjà membre,  
+                            <a href="connect.html" id="signin-btn">connectez-vous ici</a>
                         </p>
                     </form>
-
-                   
                 </div>
             </div>
         </div>
