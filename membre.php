@@ -22,19 +22,19 @@
                     </a>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                            <a href="index.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
                                 <i class="bi-house fs-1 text-light"></i>
                                 <span class="montserrat-sm d-none d-md-block text-light">Accueil</span>
                             </a>
                         </li>
                         <li class="active-item" id="dashboard-item">
-                            <a href="./membre.html" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Tableu de bord">
+                            <a href="./membre.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Tableu de bord">
                                 <i class="bi-palette fs-1 text-light"></i>
                                 <span class="montserrat-sm d-none d-md-block text-light">Tableau de bord</span>
                             </a>
                         </li>
                         <li class="" id="doc-item">
-                            <a href="./documentation.html" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Documents">
+                            <a href="./documentation.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Documents">
                                 <i class="bi-folder fs-1 text-light"></i>
                                 <span class="montserrat-sm d-none d-md-block text-light">Documentation</span>
                             </a>
@@ -112,7 +112,7 @@
 
                         <div class="row mt-4 ">
                             <div class="col-md text-center d-flex justify-content-end">
-                                <a href="./index.html">
+                                <a href="./index.php">
                                     <img src="./images/actualite 2.jpeg" alt="actualité image" class="img-fluid">
                                 </a>
                             </div>
@@ -121,17 +121,17 @@
 
                         <div class="row mt-4">
                             <div class="col-md col-lg-8 offset-lg-4">
-                                <a href="./ressources.html" class="text-decoration-none mx-3">
+                                <a href="./ressources.php" class="text-decoration-none mx-3">
                                     <img src="./images/gallery.png" alt="Gallery photo image" class="img-fluid" style="width: 50px; height: 50px;">
                                     <span class="montserrat-sm h4">Galerie photo</span>
                                 </a> 
-                                <a href="./contact.html" class="text-decoration-none">
+                                <a href="./contact.php" class="text-decoration-none">
                                     <img src="./images/yahoo.png" alt="Yahoo photo image" class="img-fluid mx-2" style="width: 50px; height: 50px;">
                                 </a> 
-                                <a href="./contact.html" class="text-decoration-none">
+                                <a href="./contact.php" class="text-decoration-none">
                                     <img src="./images/gmail.png" alt="Gmail photo image" class="img-fluid mx-2" style="width: 50px; height: 50px;">
                                 </a> 
-                                <a href="./contact.html" class="text-decoration-none">
+                                <a href="./contact.php" class="text-decoration-none">
                                     <img src="./images/whatsapp.png" alt="Whatsapp photo image" class="img-fluid mx-2" style="width: 50px; height: 50px;">
                                 </a> 
                             </div>

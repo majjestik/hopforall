@@ -29,27 +29,27 @@
             <div class="collapse navbar-collapse flex-grow-0" id="navmenu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link mt-4 mt-md-0 ">Accueil</a>
+                        <a href="./index.php" class="nav-link mt-4 mt-md-0 ">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hopforall.html" class="nav-link">HOP FOR ALL</a>
+                        <a href="hopforall.php" class="nav-link">HOP FOR ALL</a>
                     </li>
                     <li class="nav-item">
-                        <a href="ressources.html" class="nav-link active">Ressources</a>
+                        <a href="ressources.php" class="nav-link active">Ressources</a>
                     </li>
                     <li class="nav-item">
-                        <a href="membre.html" class="nav-link">Espace membre</a>
+                        <a href="membre.php" class="nav-link">Espace membre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./contact.html" class="nav-link">Contactez-nous</a>
+                        <a href="./contact.php" class="nav-link">Contactez-nous</a>
                     </li>
                 </ul>
                 
-                <a href="dons.html" class="btn btn-md w-100 mt-4 mt-lg-0 d-lg-none donate-btn" id="donate-btn">Faire un don</a>
+                <a href="dons.php" class="btn btn-md w-100 mt-4 mt-lg-0 d-lg-none donate-btn" id="donate-btn">Faire un don</a>
             </div>
             
             <div class="d-none d-lg-block">
-                <a href="dons.html" class="btn btn-md donate-btn" id="donate-btn">Faire un don</a>
+                <a href="dons.php" class="btn btn-md donate-btn" id="donate-btn">Faire un don</a>
             </div>
         </div>
     </nav>
@@ -1117,7 +1117,7 @@
                         <span class="montserrat-reg">
                             Grâce à vous nous pouvons agir chaque jour pour aider à l'amélioration de nombreuses vies humaines !
                         </span><br>
-                        <a href="dons.html" class="btn btn-lg btn-outline-light mt-3 montserrat-b">
+                        <a href="dons.php" class="btn btn-lg btn-outline-light mt-3 montserrat-b">
                             Faire un don
                         </a>
                     </div>
