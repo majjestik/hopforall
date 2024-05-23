@@ -1,3 +1,8 @@
+<?php 
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,27 +67,59 @@
 
                     <!-- SIGN UP FORM -->
 
-                    <form action="" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm my-5" id="form2">
+                    <form action="./classes/controllers/Users.class.php" method="post" 
+                        class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm my-5" id="form2"
+                    >
+
+
+                        <!--    DISPLAY RESULT  - ->
+                        <div class="col-md-12 text-center justify-content-center d-flex">
+                            < ?php  
+                                if(!empty($check->error)) {
+                                    echo "
+                                        <div class='alert alert-danger alert-dismissable fade show' role='alert'>
+                                            $check->error 
+                                            <button class='close' type='button' data-dismiss='alert' aria-label='Close'>
+                                                <span aria-hidden='true' class='ml-3'>&times;</span>
+                                            </button>
+                                        </div>
+                                    ";
+                                }
+                                else {
+                                    if(!empty($check->message)) {
+                                        echo "
+                                            <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                                                $check->message 
+                                                <button class='close' type='button' data-dismiss='alert' aria-label='Close'>
+                                                    <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                </button>
+                                            </div>
+                                        ";
+                                    }
+                                }
+                            ?>
+                        </div> -->
+
                         <h5 class=" mb-4 text-center text-uppercase montserrat-b"> S'inscrire</h5>
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Nom</label>
-                            <input type="texxt" class="form-control" placeholder="Nom">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" placeholder="Nom" name="nom">
                         </div>
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" placeholder="Prénom">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
                         </div>
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Email" name="email">
                         </div>
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe ********">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" placeholder="Mot de passe ********" name="password">
                         </div>
                         <div class="col-md-12">
-                            <label for="" class="form-label">Confirmer le mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe ********">
+                            <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+                            <input type="password" class="form-control" placeholder="Mot de passe ********" name="confirmPassword">
                         </div>
 
                         <div class="col-md-12 my-5 d-flex justify-content-center align-items-center">
