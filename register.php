@@ -1,5 +1,14 @@
 <?php 
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    // require_once './includes/autoloader.inc.php';
     
+
+    require_once './classes/Users.class.php';
+    $check = new Users();
 ?>
 
 
@@ -67,14 +76,14 @@
 
                     <!-- SIGN UP FORM -->
 
-                    <form action="./classes/controllers/Users.class.php" method="post" 
+                    <form action="./classes/Users.class.php" method="post" 
                         class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm my-5" id="form2"
                     >
 
 
-                        <!--    DISPLAY RESULT  - ->
+                        <!--    DISPLAY RESULT  -->
                         <div class="col-md-12 text-center justify-content-center d-flex">
-                            < ?php  
+                            <?php  
                                 if(!empty($check->error)) {
                                     echo "
                                         <div class='alert alert-danger alert-dismissable fade show' role='alert'>
@@ -98,7 +107,7 @@
                                     }
                                 }
                             ?>
-                        </div> -->
+                        </div> 
 
                         <h5 class=" mb-4 text-center text-uppercase montserrat-b"> S'inscrire</h5>
                         <div class="col-md-12 mb-4">
