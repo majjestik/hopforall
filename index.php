@@ -1,3 +1,17 @@
+<?php 
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    require_once './includes/autoloader.inc.php';
+
+    $check = new Members();
+
+    
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

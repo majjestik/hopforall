@@ -4,11 +4,14 @@
         session_start();
     }
 
-    // require_once './includes/autoloader.inc.php';
-    
+    require_once './includes/autoloader.inc.php';
 
-    require_once './classes/Users.class.php';
-    $check = new Users();
+    $check = new Members();
+
+    if(isset($_POST['register'])) {
+        $check->validateMember();
+    }
+    
 ?>
 
 
@@ -76,7 +79,7 @@
 
                     <!-- SIGN UP FORM -->
 
-                    <form action="./classes/Users.class.php" method="post" 
+                    <form action="./register.php" method="post" 
                         class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm my-5" id="form2"
                     >
 
@@ -86,9 +89,9 @@
                             <?php  
                                 if(!empty($check->error)) {
                                     echo "
-                                        <div class='alert alert-danger alert-dismissable fade show' role='alert'>
+                                        <div class='alert alert-info alert-dismissable fade show text-danger' role='alert'> <i class='bi bi-exclamation-triangle-fill h5'></i> 
                                             $check->error 
-                                            <button class='close' type='button' data-dismiss='alert' aria-label='Close'>
+                                            <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
                                                 <span aria-hidden='true' class='ml-3'>&times;</span>
                                             </button>
                                         </div>
@@ -99,7 +102,7 @@
                                         echo "
                                             <div class='alert alert-success alert-dismissable fade show' role='alert'>
                                                 $check->message 
-                                                <button class='close' type='button' data-dismiss='alert' aria-label='Close'>
+                                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
                                                     <span aria-hidden='true' class='ml-3'>&times;</span>
                                                 </button>
                                             </div>
@@ -112,15 +115,18 @@
                         <h5 class=" mb-4 text-center text-uppercase montserrat-b"> S'inscrire</h5>
                         <div class="col-md-12 mb-4">
                             <label for="nom" class="form-label">Nom</label>
-                            <input type="text" class="form-control" placeholder="Nom" name="nom">
+                            <input type="text" class="form-control text-capitalize"      placeholder="Nom" name="nom" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['nom']; ?>"
+                            >
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="prenom" class="form-label">Prénom</label>
-                            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+                            <input type="text" class="form-control text-capitalize" placeholder="Prénom" name="prenom" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['prenom']; ?>"
+                            >
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Email" name="email">
+                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['email']; ?>"
+                            >
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="password" class="form-label">Mot de passe</label>
@@ -132,7 +138,7 @@
                         </div>
 
                         <div class="col-md-12 my-5 d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-lg btn-primary" id="register-btn">S'inscrire</button>
+                            <button type="submit" name="register" class="btn btn-lg btn-primary" id="register-btn">S'inscrire</button>
                         </div>
                         <p>
                             Vous êtes Déjà membre,  

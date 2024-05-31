@@ -17,10 +17,16 @@
         <div class="row">
             <div class="col-sm-auto bg-primary sticky-top">
                 <div class="d-flex flex-sm-column flex-row flex-nowrap bg-primary align-items-center sticky-top">
-                    <a href="javascript:;" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-                        <i class="bi-person-circle fs-1"></i>
-                    </a>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                        <li class="nav-item" id="profiles">
+                            <a href="javascript:;" class="d-none p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                                <i class="bi-person-circle fs-1"></i>
+                            </a>
+                            <a href="profiles.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                                <i class="bi-person-circle fs-1 text-light"></i>
+                                <span class="montserrat-sm d-none d-md-block text-light">Membres</span>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="index.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
                                 <i class="bi-house fs-1 text-light"></i>

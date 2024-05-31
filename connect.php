@@ -1,3 +1,20 @@
+<?php
+
+    require_once('includes/autoloader.inc.php');
+
+    // Check if the user is already logged in, if yes then redirect him to welcome page
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        header("location: index.php");
+        exit;
+    }
+
+    $check = new Members();
+
+    if(isset($_POST['connect'])) {
+        $check->loginMember();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,15 +76,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <form action="" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
+                    <form action="./connect.php" method="post" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1"
+                    >
+
+                    <!--    DISPLAY RESULT  -->
+                    <div class="col-md-12 text-center justify-content-center d-flex">
+                            <?php  
+                                if(!empty($check->error)) {
+                                    echo "
+                                        <div class='alert alert-info alert-dismissable fade show text-danger' role='alert'> <i class='bi bi-exclamation-triangle-fill h5'></i> 
+                                            $check->error 
+                                            <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                <span aria-hidden='true' class='ml-3'>&times;</span>
+                                            </button>
+                                        </div>
+                                    ";
+                                }
+                                else {
+                                    if(!empty($check->message)) {
+                                        echo "
+                                            <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                                                $check->message 
+                                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                    <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                </button>
+                                            </div>
+                                        ";
+                                    }
+                                }
+                            ?>
+                        </div>
+
                         <h4 class=" mb-4 text-center text-uppercase montserrat-b"> Se connecter</h4>
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Email" name="email" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['email']; ?>"
+                            >
                         </div>
                         <div class="col-md-12">
-                            <label for="" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe ********">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" placeholder="Mot de passe ********" name="password"
+                            >
                         </div>
 
                         <div class="my-4">
@@ -75,7 +124,7 @@
                         </div>
 
                         <div class="col-md-12 mb-4 d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-lg btn-primary" id="connect-btn">Se connecter</button>
+                            <button type="submit" name="connect" class="btn btn-lg btn-primary" id="connect-btn">Se connecter</button>
                         </div>
                         <p>
                             Vous n'êtes pas encore membre,  
