@@ -6,9 +6,11 @@
 
     require_once './includes/autoloader.inc.php';
 
-    $check = new Members();
+    $check = new Users();
 
-    
+    // if(isset($_POST['subscribe'])) {
+    //     $check->subsToNewsletter();
+    // }
     
 ?>
 
@@ -429,15 +431,27 @@
             <!-- NEWSLETTER -->
             <section id="newsletter" class="bg-primary text-light p-5">
                 <div class="container">
-                    <div class="d-md-flex justify-content-between align-items-center">
-                        <h3 class="mb-3 mb-md-0">
-                            Restez au courant de nos activités !
-                        </h3>
-                        <div class="input-group newsletter-input">
-                            <input type="email" class="form-control" name="emailnewsletter"
-                                id="emailnewsletter" placeholder="Enter Email"
-                            >
-                            <button class="btn btn-dark btn-lg">Souscrire</button>
+                    <div class="row d-md-flex justify-content-between align-items-center">
+                        <div class="col-md-6">
+                            <h3 class="mb-3 mb-md-0">
+                                Restez au courant de nos activités !
+                            </h3>
+                        </div>
+
+                        <div class="col-md-6">
+                            <form action="" method="post" id="newsForm">
+                                <!--    DISPLAY RESULT  -->
+                                <div id="result"></div>
+
+                                <div class="input-group newsletter-input w-100">
+                                    <input type="email" class="form-control" name="newsEmail"
+                                        id="newsEmail" placeholder="Entrez votre email"
+                                    >
+                                    <button type="submit" name="subscribe" class="btn btn-dark btn-lg" id="subscribe">
+                                        Souscrire
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -781,6 +795,7 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/newsletterJS.js"></script>
     <script src="./js/aos.js"></script>
     <script>AOS.init();</script>
 </body>

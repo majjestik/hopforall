@@ -15,10 +15,11 @@
             <div class="col-md-12 montserrat-sm text-center  my-5 p-5">
                 <h5 class="text-success">Inscription réussie ! </h5>
                 <p>
-                    Vous serez notifié par l'administrateur une fois que vos accès seront activé ! <br>
+                    Vous serez notifié par email une fois que vos accès seront activé ! <br>
                     
                     En attendant, vous allez être redirigé vers la page d'accueil...
                 </p>
+                <?php header('Refresh: 10; index.php') ?>
             </div>
         </div>
     </div>

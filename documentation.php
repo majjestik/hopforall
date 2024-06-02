@@ -1,3 +1,23 @@
+<?php
+
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    require_once('includes/autoloader.inc.php');
+
+    // Check if the user is already logged in, if no then redirect him to login page
+    if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+        header("location: connect.php");
+        exit;
+    }
+
+    $check = new Members();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +39,25 @@
                 <div class="d-flex flex-sm-column flex-row flex-nowrap bg-primary align-items-center sticky-top">
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
                         <li class="nav-item" id="profiles">
-                            <a href="javascript:;" class="d-none p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-                                <i class="bi-person-circle fs-1"></i>
-                            </a>
-                            <a href="profiles.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-                                <i class="bi-person-circle fs-1 text-light"></i>
-                                <span class="montserrat-sm d-none d-md-block text-light">Membres</span>
-                            </a>
+                            <?php
+                                if($_SESSION['role'] === 'admin') {
+                                    echo '
+
+                                    <a href="profiles.php" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                                        <i class="bi-person-circle fs-1 text-light"></i>
+                                        <span class="montserrat-sm d-none d-md-block text-light">Membres</span>
+                                    </a>
+                                    ';
+                                }
+                                else {
+                                    echo '
+                                    <a href="javascript:;" class="d-block p-3 link-dark text-decoration-none" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+                                        <i class="bi-person-circle fs-1"></i>
+                                    </a>
+                                    ';
+                                }
+                            ?>
+                            
                         </li>
                         <li class="nav-item">
                             <a href="index.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">

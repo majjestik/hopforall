@@ -14,11 +14,12 @@
     }
 
     $view = new Members();
+    $view->detailsMembre();
 
-    // Delete member
-    if(isset($_POST['delete'])) {
-        $view->deleteMember();
+    if(isset($_POST['activate'])) {
+        $view->activateMember();
     }
+    
 
 ?>
 
@@ -94,69 +95,53 @@
                 <!-- content -->
 
                 <section class="d-block" id="dashboard-content">
-                    <div class="montserrat-sm">
-                        <a href="users.php" class="my-5 btn btn-secondary">Tous les membres</a>
-
-                        <a href="donations.php" class="my-5 btn btn-warning mx-3">Tous les dons</a>
-                    </div>
-
                     <h3 class="text-center montserrat-sm text-uppercase">
-                        Gerez les profiles
+                        Details du profil
                     </h3>
 
                     <div class="container mt-5">
+                        <div class="row my-4">
+                            <div class="col-md">
+                                <a href="users.php">
+                                    <i class="bi bi-arrow-left-square-fill h1"></i>
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="row">
-                            <div class="col-md-12">
-                                <!--    DISPLAY RESULT  -->
-                                <div class="col-md-12 text-center justify-content-center d-flex">
-                                        <?php  
-                                            if(!empty($view->error)) {
-                                                echo "
-                                                    <div class='alert alert-danger alert-dismissable fade show' role='alert'>
-                                                        $view->error 
-                                                        <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
-                                                            <span aria-hidden='true' class='ml-3'>&times;</span>
-                                                        </button>
-                                                    </div>
-                                                ";
-                                            }
-                                            else {
-                                                if(!empty($view->message)) {
-                                                    echo "
-                                                        <div class='alert alert-success alert-dismissable fade show' role='alert'>
-                                                            $view->message 
-                                                            <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
-                                                                <span aria-hidden='true' class='ml-3'>&times;</span>
-                                                            </button>
-                                                        </div>
-                                                    ";
-                                                }
-                                            }
-                                        ?>
-                                    </div>
+                            <div class="col-md-12 col-lg-8 offset-lg-2">
+                                <p class="montserrat-sm h5">
+                                    <span class="text-uppercase">Nom : </span>
+                                    <span class="montserrat-reg text-capitalize">
+                                        <?php echo $view->myNom . " " . $view->myPrenom; ?>
+                                    </span>
+                                </p>
 
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-hover text-center ubuntuBold text-capitalize">
+                                <p class="montserrat-sm h5 my-4">
+                                    <span class="text-uppercase">Email : </span> 
+                                    <span class="montserrat-reg">
+                                        <?php echo $view->myEmail; ?>
+                                    </span>
+                                </p>
 
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Consulter</th>
-                                                <th scope="col">Supprimmer</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                $view->unactivatedMember();
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <p class="montserrat-sm h5">
+                                    <span class="text-uppercase">Statut : </span> 
+                                    <span class="montserrat-reg">
+                                        <?php echo $view->myStatut; ?>
+                                    </span>
+                                </p>
+
+                                <p class="montserrat-sm h5 my-4">
+                                    <span class="text-uppercase">Role : </span> 
+                                    <span class="montserrat-reg">
+                                        <?php echo $view->myRole; ?>
+                                    </span>
+                                </p>
+                                
                             </div>
                         </div>
                     </div>
-                    
+
                 </section>
 
 

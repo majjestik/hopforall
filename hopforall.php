@@ -1,3 +1,15 @@
+<?php
+    
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    require_once('includes/autoloader.inc.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +103,9 @@
                             </li>
                             <li class="" id="organigram-item">
                                 <a href="javascript:;" id="organigram-link">Organigramme</a>
+                            </li>
+                            <li class="" id="fondateur-item">
+                                <a href="javascript:;" id="fondateur-link">Mot du fondateur</a>
                             </li>
                         </ul>
                     </div>
@@ -316,7 +331,7 @@
                             </div>
                         </section>
 
-                        <!-- Button  -->
+                        <!-- Button 6 -->
                         <section id="organigram-text" class="d-none">
                             <h6 class="montserrat-sm text-uppercase">Organigramme de HOP FOR ALL</h6>
 
@@ -324,6 +339,84 @@
                                 <img src="./images/organigramme.jpeg" alt="Organigramme de HOP FOR ALL" class="img-fluid">
                             </div>
                         </section>
+
+                        <!-- Button 7 -->
+                        <section id="fondateur-text" class="d-none">
+                            <h6 class="montserrat-sm text-uppercase">Mot du Fondateur</h6>
+
+                            <div class="montserrat-reg mt-5 text-justify">
+                                <p>
+                                    Chers visiteurs, 
+                                    <br><br>
+                                    Bienvenue sur le site de HOP FOR ALL. C'est avec une immense gratitude et
+                                    un profond engagement que je vous écris aujourd'hui en tant que Fondateur de
+                                    HOP FOR ALL . Notre mission est simple mais puissante : offrir un soutien
+                                    essentiel aux populations marginalisées et vulnérables, notamment aux enfants des rues, aux
+                                    femmes en situation de précarité et aux personnes incarcérées.
+                                    <br><br>
+
+                                    L'idée de créer HOP FOR ALL est née d'une conviction profonde que chaque individu,
+                                    indépendamment de son parcours ou de ses circonstances, mérite une chance équitable de
+                                    s'épanouir et de contribuer positivement à la société. Au fil des années, j'ai été témoin de
+                                    nombreuses injustices et de nombreuses vies brisées par l'exclusion et le manque de soutien. Ce
+                                    constat m'a poussé à agir et à réunir une équipe de personnes passionnées et déterminées à faire
+                                    la différence.
+                                    <br><br>
+
+                                    Chez HOP FOR ALL, nous croyons fermement en la puissance de l'entraide, de la
+                                    solidarité et de l'inclusion. Notre approche holistique nous permet de fournir des opportunités
+                                    éducatives, des programmes de réinsertion sociale et des services de soutien psychosocial et de
+                                    réhabilitation à notre population cible. Ces actions concrètes visent à autonomiser les personnes
+                                    que nous accompagnons, leur permettant ainsi de retrouver espoir et dignité.
+                                    <br><br>
+
+                                    Nous travaillons en étroite collaboration avec d'autres organisations, des institutions
+                                    éducatives et des services publics pour maximiser l'impact de nos initiatives. Ensemble, nous
+                                    sensibilisons la société aux défis rencontrés par les groupes marginalisés et plaidons pour des
+                                    politiques plus inclusives.
+                                    <br>
+                                    Notre objectif est de créer un environnement où chaque personne a la possibilité des'épanouir pleinement dans une société plus solidaire et plus inclusive.
+                                    <br><br>
+
+                                    Je vous invite chaleureusement à vous joindre à nous dans cette mission. Que vous
+                                    souhaitiez devenir bénévole, faire un don, ou établir un partenariat, votre soutien est crucial pour
+                                    nous permettre de continuer notre travail et d'atteindre encore plus de personnes dans le besoin.
+                                    <br><br>
+
+                                    Pour finir, Je m'appelle Romain DINGAO, né le 7 février 1986 à Yaoundé. Je suis de
+                                    nationalité tchadienne. J’ai consacré une grande partie de ma vie à l'étude et au travail dans diversdomaines académiques et professionnels. Je suis titulaire d'une maîtrise en sciences et
+                                    techniques de gestion de l'université de Ngaoundéré (Cameroun) et j'ai obtenu un diplôme en
+                                    gestion de projet à l'Académie canadienne de management et de technologie. Par la suite, j'ai
+                                    complété un Master 2 en santé publique avec une spécialisation en épidémiologie à l'université de
+                                    Douala (Cameroun) et un Master 2 en cultures et religions à l'Institut universitaire de
+                                    développement international. En outre, j'ai obtenu une certification en marketing digital délivrée par
+                                    The Open University, Google, et IAB (USA), ainsi que des certificats en économie et gestion de l'environnement et des ressources naturelles, en droit et protection de l'environnement, et en
+                                    développement durable, tous obtenus à l'Institut de la Francophonie pour le développement
+                                    durable. Mon parcours professionnel inclut divers postes à l'Institut universitaire La Fraternité de
+                                    Yaoundé.
+                                    <br><br>
+
+                                    Mon parcours académique diversifié et riche en expériences a été déterminant dans la
+                                    conception et le développement de HOP FOR ALL®. Chaque étape de mon parcours a renforcé ma
+                                    compréhension des défis complexes auxquels sont confrontées les populations marginalisées et
+                                    m'a doté des compétences nécessaires pour aborder ces défis de manière efficace et holistique.
+                                    <br>
+                                    
+                                    Ensemble, nous pouvons construire un avenir meilleur pour tous.<br><br>
+
+                                    Merci pour votre visite et votre soutien. <br><br>
+
+                                    Avec gratitude.
+                                </p>
+
+                                <p>
+                                    DINGAO Romain
+                                   <br>
+                                   <span>Fondateur de HOP FOR ALL</span> 
+                                </p>
+                            </div>
+                        </section>
+
                     </div>
                 </div>
             </div>

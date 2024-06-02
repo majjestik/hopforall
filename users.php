@@ -94,14 +94,12 @@
                 <!-- content -->
 
                 <section class="d-block" id="dashboard-content">
-                    <div class="montserrat-sm">
-                        <a href="users.php" class="my-5 btn btn-secondary">Tous les membres</a>
-
-                        <a href="donations.php" class="my-5 btn btn-warning mx-3">Tous les dons</a>
-                    </div>
+                    <a href="profiles.php" class="my-5 btn btn-primary">
+                        <i class="bi bi-arrow-left-square-fill h1"></i>
+                    </a>
 
                     <h3 class="text-center montserrat-sm text-uppercase">
-                        Gerez les profiles
+                        Liste des membres
                     </h3>
 
                     <div class="container mt-5">
@@ -148,7 +146,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $view->unactivatedMember();
+                                                $view->allMembers();
                                             ?>
                                         </tbody>
                                     </table>

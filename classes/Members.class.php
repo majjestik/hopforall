@@ -16,6 +16,7 @@
         public $myPrenom;
         public $myEmail;
         public $myStatut;
+        public $myRole;
 
         public $error = "";
         public $message = "";
@@ -194,7 +195,7 @@
             if($rows > 0) 
             {
                 foreach ($rows as $output) {
-                    $total .= "<tr><td>" .$a++. "</td><td>" .$output['nom']." " .$output['prenom'].  "</td><td><a href='details.php?id=" .$output['id']."' class='btn btn-block btn-success'><i class='bi bi-eye-open'></i> Consulter</a></td><td> <form action='profiles.php' style='border: none;' method='post'>" ."<input type='hidden' name='delete' value=" .$output["id"] . "> <button class='btn btn-danger btn-block' type='submit'><i class='bi bi-remove'></i> Supprimer  </button>" ."</form> </td></tr> ";
+                    $total .= "<tr><td>" .$a++. "</td><td>" .$output['nom']." " .$output['prenom'].  "</td><td><a href='details.php?id=" .$output['id']."' class='btn btn-block btn-success'><i class='bi bi-eye-fill'></i> Consulter</a></td><td> <form action='profiles.php' style='border: none;' method='post'>" ."<input type='hidden' name='delete' value=" .$output["id"] . "> <button class='btn btn-danger btn-block' type='submit'><i class='bi bi-trash-fill'></i> Supprimer  </button>" ."</form> </td></tr> ";
                 }
             }
             echo $total;
@@ -227,6 +228,7 @@
             $this->myPrenom = $data['prenom'];
             $this->myEmail = $data['email'];
             $this->myStatut = $data['statut'];
+            $this->myRole = $data['role'];
 
             if($data['statut'] == 0) {
                 $this->myStatut = "Inactif";
@@ -252,6 +254,26 @@
                 $this->error = "Activation echouée... Réessayez plus tard !";
             }
         }
+        
+        // LIST OF MEMBERS
+        public function allMembers()
+        {
+            $a = 1;
+            $total = "";
 
+            $query = "SELECT * FROM members WHERE statut = 1";
+            $rslt = $this->getConnected()->prepare($query);
+            $rslt->execute();
+
+            $rows = $rslt->fetchAll();
+
+            if($rows > 0) 
+            {
+                foreach ($rows as $output) {
+                    $total .= "<tr><td>" .$a++. "</td><td>" .$output['nom']." " .$output['prenom'].  "</td><td><a href='users_details.php?id=" .$output['id']."' class='btn btn-block btn-success'><i class='bi bi-eye-fill'></i> Consulter</a></td><td> <form action='profiles.php' style='border: none;' method='post'>" ."<input type='hidden' name='delete' value=" .$output["id"] . "> <button class='btn btn-danger btn-block' type='submit'><i class='bi bi-trash-fill'></i> Supprimer  </button>" ."</form> </td></tr> ";
+                }
+            }
+            echo $total;
+        }
 
     }

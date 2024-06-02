@@ -11,6 +11,7 @@ const whatText = document.getElementById('what-text');
 const docsText = document.getElementById('docs-text');
 const partnerText = document.getElementById('partner-text');
 const organigramText = document.getElementById('organigram-text');
+const fondateurText = document.getElementById('fondateur-text');
 // 
 const aboutItem = document.getElementById('about-item');
 const causesItem = document.getElementById('causes-item');
@@ -18,6 +19,7 @@ const whatItem = document.getElementById('what-item');
 const docsItem = document.getElementById('docs-item');
 const partnerItem = document.getElementById('partner-item');
 const organigramItem = document.getElementById('organigram-item');
+const fondateurItem = document.getElementById('fondateur-item');
 // 
 const aboutLink = document.getElementById('about-link');
 const causesLink = document.getElementById('causes-link');
@@ -25,12 +27,13 @@ const whatLink = document.getElementById('what-link');
 const docsLink = document.getElementById('docs-link');
 const partnerLink = document.getElementById('partner-link');
 const organigramLink = document.getElementById('organigram-link');
+const fondateurLink = document.getElementById('fondateur-link');
 
 menuBlock.forEach( (e) => {
     e.addEventListener("click", (i) => {
         if((i.target) !== i.currentTarget) {
             let clickedItem = i.target.id;
-            console.log(clickedItem);
+           console.log(clickedItem);
             
             if(clickedItem === "about-link") {
                 for(i = 0; i < menuBlock.length; i++) {
@@ -75,7 +78,16 @@ menuBlock.forEach( (e) => {
                 }
                 organigramItem.classList.add('active-tab');
                 organigramText.classList.replace('d-none', 'd-block');
-            } else {
+            }
+            else if(clickedItem === "fondateur-link") {
+                for(i = 0; i < menuBlock.length; i++) {
+                    menuBlock[i].classList.remove('active-tab');
+                    textBlock[i].classList.replace('d-block', 'd-none');
+                }
+                fondateurItem.classList.add('active-tab');
+                fondateurText.classList.replace('d-none', 'd-block');
+            } 
+            else {
                 for(i = 0; i < menuBlock.length; i++) {
                     menuBlock[i].classList.remove('active-tab');
                     textBlock[i].classList.replace('d-block', 'd-none');

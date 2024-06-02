@@ -1,3 +1,21 @@
+<?php
+
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    require_once('includes/autoloader.inc.php');
+
+    $check = new ResetPasswords();
+
+    if(isset($_POST['send'])) {
+        $check->sendEmail();
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,15 +77,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <form action="" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
+                    <form action="" method="post" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
                         <h4 class=" mb-4 text-center text-uppercase montserrat-b"> Mot de passe oublié</h4>
+
+                        <!--    DISPLAY RESULT  -->
+                        <div class="col-md-12 text-center justify-content-center d-flex">
+                            <?php  
+                                if(!empty($check->error)) {
+                                    echo "
+                                        <div class='alert alert-danger alert-dismissable fade show' role='alert'>
+                                            $check->error 
+                                            <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                <span aria-hidden='true' class='ml-3'>&times;</span>
+                                            </button>
+                                        </div>
+                                    ";
+                                }
+                                else {
+                                    if(!empty($check->message)) {
+                                        echo "
+                                            <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                                                $check->message 
+                                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                    <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                </button>
+                                            </div>
+                                        ";
+                                    }
+                                }
+                            ?>
+                        </div>
+
                         <div class="col-md-12 mb-4">
-                            <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
 
                         <div class="col-md-12 mb-4 d-flex justify-content-center align-items-center">
-                            <button type="submit" class="btn btn-lg btn-primary" id="connect-btn">Envoyer</button>
+                            <button type="submit" name="send" class="btn btn-lg btn-primary" id="connect-btn">Envoyer</button>
                         </div>
                         <p>
                             Vous n'êtes pas encore membre,  
