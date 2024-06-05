@@ -148,7 +148,6 @@
 
 
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/connect.js"></script>
     
 </body>
 </html>

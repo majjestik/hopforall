@@ -1,5 +1,4 @@
 
-
 <?php
 
     /* START SESSION */
@@ -18,10 +17,13 @@
     $check = new ResetPasswords();
 
     if(isset($_POST['verify'])) {
-        $check->resetPassword();
+        $check->verifyOTP();
     }
+    
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,7 @@
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/connect.css">
-    <title>CHANGER MOT DE PASSE - HOP FOR ALL</title>
+    <title>Entrer le code OTP - HOP FOR ALL</title>
 </head>
 <body>
     <!-- NAVBAR  -->
@@ -84,8 +86,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <form action="" method="post" class="my-5 p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
-                        <h5 class=" mb-4 text-center text-uppercase montserrat-b"> Modifier mot de passe</h5>
+                    <form action="" method="post" class="p-4 col-lg-8 offset-lg-2 montserrat-sm d-block" id="form1">
+                        <h5 class=" mb-4 text-center text-uppercase montserrat-b"> 
+                            Entrez votre code OTP
+                        </h5>
+
+                        <p class="text-center montserrat-sm italic text-danger">
+                            Vérifiez votre boîte mail pour avoir le code OTP
+                        </p>
 
                         <!--    DISPLAY RESULT  -->
                         <div class="col-md-12 text-center justify-content-center d-flex">
@@ -115,13 +123,13 @@
                             ?>
                         </div>
 
-                        <div class="col-md-12">
-                            <label for="" class="form-label">Mot de passe</label>
-                            <input type="password" name="password" class="form-control" placeholder="Mot de passe ********">
+                        <div class="col-md-12 mt-3">
+                            <label for="" class="form-label">Code OTP</label>
+                            <input type="text" name="otp" class="form-control" placeholder="Code OTP ********">
                         </div>
 
                         <div class="col-md-12 my-4 d-flex justify-content-center align-items-center">
-                            <button type="submit" name="verify" class="btn btn-lg btn-primary" id="connect-btn">Enregistrer</button>
+                            <button type="submit" name="verify" class="btn btn-lg btn-primary" id="connect-btn">Vérifier</button>
                         </div>
                     </form>
 
@@ -138,7 +146,7 @@
 
 
 
-
+<!-- 
 
 
     <footer class="footer-block">
@@ -147,7 +155,7 @@
             <p>All rights reserved. © HOP for ALL, 2024</p>
         </div>
     </footer>
-
+ -->
 
 
     <script src="./js/bootstrap.min.js"></script>
