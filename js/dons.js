@@ -48,4 +48,45 @@ $(function() {
             }
         }
     });
+
+    // MULTI-STEP FORM HANDLER
+    donForm.steps({
+        bodyTag: "section",
+        transitionEffect: "fade",
+        enableAllSteps: true,
+        transitionEffectSpeed: 500,
+        labels: {
+            finish: "Donner",
+            next: "Suivant",
+            previous: "Précédent"
+        },
+        onStepChanging: function(event, currentIndex, newIndex) {
+            donForm.validate().settings.ignore = ":disabled, :hidden";
+
+            if(donForm.valid()) {
+                $('.wizard > steps li a#donForm-t-' +newIndex).parent().addClass('checked');
+                $('.wizard > steps li a#donForm-t-' +newIndex).parent().prevAll().addClass('checked');
+                $('.wizard > steps li a#donForm-t-' +newIndex).parent().nextAll().addClass('checked');
+            }
+            return donForm.valid();
+        },
+        onFinishing: function(event, currentIndex) {
+            donForm.validate().settings.ignore = ":disabled";
+            return donForm.valid();
+        },
+        onFinished: function(event, currentIndex) {
+            alert('Envoyé!');
+        }
+    }); 
+
+    // CUSTOM jQuery STEPS BUTTON
+    $('.forward').click(function() {
+        $('#donForm').steps('next');
+    });
+
+    $('.backward').click(function() {
+        $('#donForm').steps('previous');
+    });
+
+
 });
