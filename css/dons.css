@@ -24,6 +24,8 @@
     --dark-color: #1c2833;
     --light-gray-color: #dddddd;
     --white-color: #ffffff;
+    --danger: #dc3545;
+    --success: #198754;
 }
 
 .float-right {
@@ -92,3 +94,22 @@ form {
 input.invalid {
     background-color: #ffdddd;
 }
+
+.error input {
+    border-color: var(--danger);
+    border-width: 2px;
+}
+
+.success input {
+    border-color: var(--success);
+    border-width: 2px;
+}
+
+.error span {
+    color: var(--danger);
+}
+
+span.error {
+    color: var(--danger);
+}
+

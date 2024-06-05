@@ -1,147 +1,51 @@
-
-
-const form1 = document.getElementById('form1');
-const form2 = document.getElementById('form2');
-const form3 = document.getElementById('form3');
-const form4 = document.getElementById('form4');
-
-const progressEl = document.getElementById('progress');
-const circles = document.querySelectorAll('.circle');
-
-let currentActive = 1;
-
-// =================  NEXT FORMS ====================
-
-function nextOne() {
-    form1.classList.replace('d-block', 'd-none');
-    form2.classList.replace('d-none', 'd-block');
+$(function() {
+    let donForm = $('#donForm');
     
-    // Next progress number
-
-    incrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-function nextTwo() {
-    form2.classList.replace('d-block', 'd-none');
-    form3.classList.replace('d-none', 'd-block');
-
-    // Next progress number
-
-    incrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-function nextThree() {
-    form3.classList.replace('d-block', 'd-none');
-    form4.classList.replace('d-none', 'd-block');
-
-    // Next progress number
-
-    incrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-// ================= PREVIOUS FORMS ================
-
-function prevOne() {
-    form2.classList.replace('d-block', 'd-none');
-    form1.classList.replace('d-none', 'd-block');
-
-    // Prev progress number
-
-    decrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-function prevTwo() {
-    form3.classList.replace('d-block', 'd-none');
-    form2.classList.replace('d-none', 'd-block');
-    
-    // Prev progress number
-
-    decrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-function prevThree() {
-    form4.classList.replace('d-block', 'd-none');
-    form3.classList.replace('d-none', 'd-block');
-
-    // Prev progress number
-
-    decrementCircle();
-
-    // Update progress bar
-    
-    updateBar();
-}
-
-// ================= INCREMENT CIRCLE ============
-function incrementCircle() {
-    currentActive++;
-    if(currentActive > circles.length) {
-        currentActive = circles.length;
-    }
-}
-
-// ================= DECREMENT CIRCLE ============
-function decrementCircle() {
-    currentActive--;
-    if(currentActive < 1) {
-        currentActive = 1;
-    }
-}
-
-// ================= UPDATE BAR ==================
-
-function updateBar() {
-    circles.forEach((circle, index) => {
-        if(index < currentActive) {
-            circle.classList.add('active-circle');
-        } else {
-            circle.classList.remove('active-circle');
+    // FORM VALIDATION WITH jQuery
+    donForm.validate({
+        rules: {
+            civilite: "required",
+            nomDon: "required",
+            prenomDon: "required",
+            telephone: {
+                required: true,
+                minlength: 9
+            },
+            emailDon: {
+                required: true,
+                email: true
+            },
+            ville: "required",
+            pays: "required",
+            raison: "required",
+            nature: "required",
+            destination: "required",
+            idTransaction: {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            civilite: "Vous êtes ?",
+            nomDon: "Veuillez entrer votre nom",
+            prenomDon: "Veuillez entrer votre prénom",
+            telephone: {
+                required: "Veuillez entrer votre numéro de téléphone",
+                minlength: "Votre numéro doit avoir au moins 9 chiffres"
+            },
+            emailDon: {
+                required: "Veuilez entrer votre adresse email",
+                email: "Veuillez entrer une adresse email valide"
+            },
+            ville: "Veuillez entrer votre ville",
+            pays: "Veuillez entrer votre pays",
+            raison: "Ce champ ne doit pas être vide",
+            nature: "Veuillez préciser la nature de votre don",
+            destination: "Vous faites ce don pour ?",
+            idTransaction: {
+                required: "Veuillez entrer l'ID de votre transaction",
+                minlength: "L'ID doit avoir au moins 6 caractères"
+            }
         }
-
-        const actives = document.querySelectorAll('.active-circle');
-
-        progressEl .style.width = ((actives.length - 1) / (circles.length - 1)) * 100 + "%";  
     });
-}
-
-
-
-// ================== BUTTON EVENTS ===============
-
-const btnsEvents = () => {
-    const next1 = document.getElementById('next1');
-    const next2 = document.getElementById('next2');
-    const next3 = document.getElementById('next3');
-    const prev1 = document.getElementById('prev1');
-    const prev2 = document.getElementById('prev2');
-    const prev3 = document.getElementById('prev3');
-
-    next1.addEventListener('click', nextOne);
-    next2.addEventListener('click', nextTwo);
-    next3.addEventListener('click', nextThree);
-    prev1.addEventListener('click', prevOne);
-    prev2.addEventListener('click', prevTwo);
-    prev3.addEventListener('click', prevThree);
-}
-
-document.addEventListener('DOMContentLoaded', btnsEvents);
+});

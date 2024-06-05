@@ -1,3 +1,16 @@
+<?php 
+    /* START SESSION */
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    require_once './includes/autoloader.inc.php';
+
+    $check = new Users();
+
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,175 +110,203 @@
                             </div>
                         </div>
                         
-                        <form class="col-lg-10 offset-lg-1 d-block" id="form1">
-                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Vos coordonnées</h5>
-                            <div class="row">
-                                <div class="col-lg-2 mb-4">
-                                    <label for="civilite" class="form-label">Civilité</label>
-                                    <select name="civilite" id="civilite" class="form-select">
-                                        <option value="mr">Mr</option>
-                                        <option value="mme">Mme</option>
-                                        <option value="mlle">Mlle</option>
-                                        <option value="dr">Dr</option>
-                                        <option value="pr">Pr</option>
+                        <form class="col-lg-10 offset-lg-1" id="donForm">
+
+                            <!-- STEP 1 -->
+                            <section id="form1" class="d-block">
+                                <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Vos coordonnées</h5>
+
+                                <div id="result"></div>
+
+                                <div class="row">
+                                    <div class="col-lg-2 mb-4">
+                                        <label for="civilite" class="form-label">Civilité</label>
+                                        <select name="civilite" id="civilite" class="form-select">
+                                            <option value="mr">Mr</option>
+                                            <option value="mme">Mme</option>
+                                            <option value="mlle">Mlle</option>
+                                            <option value="dr">Dr</option>
+                                            <option value="pr">Pr</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-5 mb-4">
+                                        <label for="nomDon" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" placeholder="Nom" id="nomDon" name="nomDon">
+                                        <span class="error" id="nomErr"></span>
+                                    </div>
+                                    <div class="col-lg-5 mb-4">
+                                        <label for="prenomDon" class="form-label">Prénom</label>
+                                        <input type="text" class="form-control" placeholder="Prénom" id="prenomDon" name="prenomDon">
+                                        <span class="error" id="prenomErr"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4">
+                                        <label for="telephone" class="form-label">Téléphone</label>
+                                        <input type="number" placeholder="690000000" class="form-control" id="telephone" name="telephone">
+                                        <span class="error" id="telErr"></span>
+                                    </div>
+                                    <div class="col-lg-6 mb-4">
+                                        <label for="Don" class="form-label">Email</label>
+                                        <input type="email" placeholder="monemail@email.com" class="form-control" id="emailDon" name="emailDon">
+                                        <span class="error" id="emailErr"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4">
+                                        <label for="ville" class="form-label">Ville</label>
+                                        <input type="text" placeholder="Ville" class="form-control" id="ville" name="ville">
+                                        <span class="error" id="villeErr"></span>
+                                    </div>
+                                    <div class="col-lg-6 mb-4">
+                                        <label for="pays" class="form-label">Pays</label>
+                                        <input type="text" placeholder="Pays" class="form-control" id="pays" name="pays">
+                                        <span class="error" id="paysErr"></span>
+                                    </div>
+                                </div>
+                                
+                                <br>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary float-right " type="button" id="next1">
+                                        Suivant
+                                    </button>
+                                </div>
+                            </section>
+
+                            <!-- STEP 2 -->
+                            <section id="form2" class="d-none">
+                                <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations supplémentaires</h5>
+
+                                <div id="result"></div>
+
+                                <div class="col-lg-12 mb-4">
+                                    <label for="raison" class="form-label">
+                                        Comment avez-vous entendu parlé de HOP FOR ALL et pourquoi faire un don ?
+                                    </label>
+                                    <textarea name="raison" id="raison" class="form-control" rows="5"></textarea>
+                                    <span class="error" id="raisonErr"></span>
+                                </div>
+                                <div class="col-lg-12 mb-4">
+                                    <label for="nature" class="form-label">Nature du don</label>
+                                    <select name="nature" id="nature" class="form-select">
+                                        <option value="argent">En espèces</option>
+                                        <option value="nature">En nature</option>
+                                        <option value="autres">Autres</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-5 mb-4">
-                                    <label for="nom" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" placeholder="Nom" id="nom" name="nom">
+                                <div class="col-lg-12 mb-4">
+                                    <label for="destination" class="form-label">Destination de votre don</label>
+                                    <br>
+                                    <div class="mb-3 mb-md-0">
+                                        <span class="">
+                                            <input type="checkbox" name="destination" id="destination" value="enfants" class="form-check-input mb-3 mx-2">
+                                        </span> 
+                                        <span class="">
+                                            Enfants (de la rue, délaissés, abandonnés, victimes du VIH etc…)
+                                        </span>
+                                    </div>
+                                    <span class="error" id="destinationErr"></span>
+                                    <input type="checkbox" name="destination" id="destination" value="femmes" class="form-check-input mb-3 mx-2"> Femmes en situation de précarité <br>
+                                    <input type="checkbox" name="destination" id="destination" value="detenu" class="form-check-input mb-3 mx-2"> Personnes incarcérées <br>
+                                    <input type="checkbox" name="destination" id="destination" value="kit" class="form-check-input mb-3 mx-2"> Kit de survie <br>
+                                    <input type="checkbox" name="destination" id="destination" value="accompagnement" class="form-check-input mb-3 mx-2"> Accompagnement social <br>
+                                    <input type="checkbox" name="destination" id="destination" value="educ" class="form-check-input mb-3 mx-2"> Education & Santé <br>
+                                    <input type="checkbox" name="destination" id="destination" value="projet" class="form-check-input mb-3 mx-2"> Projet et gestion de l'association <br>
+                                    <input type="checkbox" name="destination" id="destination" value="autres" class="form-check-input mb-3 mx-2"> Autres <br>
                                 </div>
-                                <div class="col-lg-5 mb-4">
-                                    <label for="prenom" class="form-label">Prénom</label>
-                                    <input type="text" class="form-control" placeholder="Prénom" id="prenom" name="prenom">
+
+                                <div class="mb-5">
+                                    <button class="btn btn-primary float-right" type="button" id="next2">Suivant</button>
+                                    <button class="btn btn-danger float-right mx-4" type="button" id="prev1">Précédent</button>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <label for="telephone" class="form-label">Téléphone</label>
-                                    <input type="number" placeholder="690000000" class="form-control" id="telephone" name="telephone">
+                            </section>
+
+                            <!-- STEP 3 -->
+                            <section id="form3" class="d-none">
+                                <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations des comptes</h5>
+
+                                <div id="result"></div>
+
+                                <div class="row text-center my-5">
+                                    <p class="text-center italic mb-5">
+                                        Pour les dons en espèces, veuillez utiliser les moyens d'envoi d'argent avec les informations ci-dessous !
+                                    </p>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <span class="d-flex justify-content-evenly align-items-center mb-3">
+                                            <span>
+                                                <img src="./images/western-union-2.svg" alt="Western union icon image">
+                                            </span>
+                                            <span>
+                                                <img src="./images/moneygram.svg" alt="MoneyGram Icon image">
+                                            </span>
+                                        </span>
+                                        <h6 class="text-uppercase mb-4 text-danger">Western union / MoneyGram</h6>
+                                    
+                                        <p class="">
+                                            Nom : <span class="text-uppercase">Dingao Romain</span>
+                                        </p>
+                                        <p class="">
+                                            Tél : (+237) 693 - 964 - 714
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-6 ">
+                                        <span>
+                                            <img src="./images/mtn momo.png" alt="MTN MOMO image" class="img-fluid mb-3" width="110">
+                                        </span>
+                                        <h6 class="text-uppercase mb-4 text-primary">MTN Mobile Money</h6>
+                                    
+                                        <p class="">
+                                            Nom : <span class="text-uppercase">Dingao Romain</span>
+                                        </p>
+                                        <p class="">
+                                            Tél : (+237) 672 - 315 - 904
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 mb-4">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" placeholder="monemail@email.com" class="form-control" id="email" name="email">
+
+                                <div class="row">
+                                    <p class="text-center italic mb-5">
+                                        Pour toutes autres formes de dons, veuillez nous <a href="contact.php"> contacter </a>  par email ou à notre boîte postale !
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 mb-4">
-                                    <label for="ville" class="form-label">Ville</label>
-                                    <input type="text" placeholder="Ville" class="form-control" id="ville" name="ville">
+                                <br>
+                                <div class="mb-5">
+                                    <button class="btn btn-primary float-right" type="button" id="next3">Suivant</button>
+                                    <button class="btn btn-danger float-right mx-4" type="button" id="prev2">Précédent</button>
                                 </div>
-                                <div class="col-lg-6 mb-4">
-                                    <label for="pays" class="form-label">Pays</label>
-                                    <input type="text" placeholder="Pays" class="form-control" id="pays" name="pays">
+                            </section>
+
+                            <!-- STEP 4 -->
+                            <section id="form4" class="d-none">
+                                <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Validation du don</h5>
+
+                                <div id="result"></div>
+
+                                <br>
+                                <p class="text-center italic mb-5">
+                                    Veuillez entrer l'ID de votre transaction ou le Numéro du bordereau de votre transaction à l'étape précédente !
+                                </p>
+                                <div class="col-md my-5">
+                                    <label for="idTransaction" class="form-label">ID de la transaction</label>
+                                    <input type="text" class="form-control" placeholder="ID de la transaction" id="idTransaction" name="idTransaction">
                                 </div>
-                            </div>
+                                <div class="col-md mb-4">
+                                    <input type="checkbox" id="anonyme" name="anonyme" class="form-check-input mx-2">
+                                    <label for="anonyme">Je souhaite rester anonyme</label>
+                                </div>
+                                <div class="col-md mb-4">
+                                    <input type="checkbox" id="souscription" name="souscription" class="form-check-input mx-2">
+                                    <label for="souscription">Je souhaite recevoir régulièrement des newsletter</label>
+                                </div>
+                                <br>
+                                <div class="mb-5">
+                                    <button class="btn btn-success float-right" type="button" id="donner" name="donner">Envoyer</button>
+                                    <button class="btn btn-danger float-right mx-4" type="button" id="prev3">Précédent</button>
+                                </div>
+                            </section>
                             
-                            <br>
-                            <div class="mb-3">
-                                <button class="btn btn-primary float-right" type="button" id="next1">
-                                    Suivant
-                                </button>
-                            </div>
-                        </form>
-
-                        <form id="form2" class="col-lg-10 offset-lg-1 d-none">
-                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations supplémentaires</h5>
-                            <div class="col-lg-12 mb-4">
-                                <label for="raison" class="form-label">
-                                    Comment avez-vous entendu parlé de HOP FOR ALL et pourquoi faire un don ?
-                                </label>
-                                <textarea name="raison" id="raison" class="form-control" rows="5"></textarea>
-                            </div>
-                            <div class="col-lg-12 mb-4">
-                                <label for="nature-du-don" class="form-label">Nature du don</label>
-                                <select name="nature-du-don" id="nature-du-don" class="form-select">
-                                    <option value="argent">En espèces</option>
-                                    <option value="nature">En nature</option>
-                                    <option value="autres">Autres</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-12 mb-4">
-                                <label for="destination" class="form-label">Destination de votre don</label>
-                                <br>
-                                <div class="mb-3 mb-md-0">
-                                    <span class="">
-                                        <input type="checkbox" name="destination" id="destination" value="enfants" class="form-check-input mb-3 mx-2">
-                                    </span> 
-                                    <span class="">
-                                        Enfants (de la rue, délaissés, abandonnés, victimes du VIH etc…)
-                                    </span>
-                                </div>
-                                <input type="checkbox" name="destination" id="destination" value="femmes" class="form-check-input mb-3 mx-2"> Femmes en situation de précarité <br>
-                                <input type="checkbox" name="destination" id="destination" value="detenu" class="form-check-input mb-3 mx-2"> Personnes incarcérées <br>
-                                <input type="checkbox" name="destination" id="destination" value="kit" class="form-check-input mb-3 mx-2"> Kit de survie <br>
-                                <input type="checkbox" name="destination" id="destination" value="accompagnement" class="form-check-input mb-3 mx-2"> Accompagnement social <br>
-                                <input type="checkbox" name="destination" id="destination" value="educ" class="form-check-input mb-3 mx-2"> Education & Santé <br>
-                                <input type="checkbox" name="destination" id="destination" value="projet" class="form-check-input mb-3 mx-2"> Projet et gestion de l'association <br>
-                                <input type="checkbox" name="destination" id="destination" value="autres" class="form-check-input mb-3 mx-2"> Autres <br>
-                            </div>
-
-                            <div class="mb-5">
-                                <button class="btn btn-primary float-right" type="button" id="next2">Suivant</button>
-                                <button class="btn btn-danger float-right mx-4" type="button" id="prev1">Précédent</button>
-                            </div>
-                        </form>
-
-                        <form id="form3" class="col-lg-10 offset-lg-1 d-none">
-                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations des comptes</h5>
-                            <div class="row text-center my-5">
-                                <p class="text-center italic mb-5">
-                                    Pour les dons en espèces, veuillez utiliser les moyens d'envoi d'argent avec les informations ci-dessous !
-                                </p>
-                                <br>
-                                <div class="col-md-6">
-                                    <span class="d-flex justify-content-evenly align-items-center mb-3">
-                                        <span>
-                                            <img src="./images/western-union-2.svg" alt="Western union icon image">
-                                        </span>
-                                        <span>
-                                            <img src="./images/moneygram.svg" alt="MoneyGram Icon image">
-                                        </span>
-                                    </span>
-                                    <h6 class="text-uppercase mb-4 text-danger">Western union / MoneyGram</h6>
-                                
-                                    <p class="">
-                                        Nom : <span class="text-uppercase">Dingao Romain</span>
-                                    </p>
-                                    <p class="">
-                                        Tél : (+237) 693 - 964 - 714
-                                    </p>
-                                </div>
-
-                                <div class="col-md-6 ">
-                                    <span>
-                                        <img src="./images/mtn momo.png" alt="MTN MOMO image" class="img-fluid mb-3" width="110">
-                                    </span>
-                                    <h6 class="text-uppercase mb-4 text-primary">MTN Mobile Money</h6>
-                                
-                                    <p class="">
-                                        Nom : <span class="text-uppercase">Dingao Romain</span>
-                                    </p>
-                                    <p class="">
-                                        Tél : (+237) 672 - 315 - 904
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <p class="text-center italic mb-5">
-                                    Pour toutes autres formes de dons, veuillez nous <a href="contact.php"> contacter </a>  par email ou à notre boîte postale !
-                                </p>
-                            </div>
-                            <br>
-                            <div class="mb-5">
-                                <button class="btn btn-primary float-right" type="button" id="next3">Suivant</button>
-                                <button class="btn btn-danger float-right mx-4" type="button" id="prev2">Précédent</button>
-                            </div>
-                        </form>
-
-                        <form action="" id="form4" class="col-lg-10 offset-lg-1 d-none">
-                            <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Validation du don</h5>
-                            <br>
-                            <p class="text-center italic mb-5">
-                                Veuillez entrer l'ID de votre transaction ou le Numéro du bordereau de votre transaction à l'étape précédente !
-                            </p>
-                            <div class="col-md my-5">
-                                <label for="transacid" class="form-label">ID de la transaction</label>
-                                <input type="text" class="form-control" placeholder="ID de la transaction" id="transacid">
-                            </div>
-                            <div class="col-md mb-4">
-                                <input type="checkbox" id="anonyme" name="anonyme" class="form-check-input mx-2">
-                                <label for="anonyme">Je souhaite rester anonyme</label>
-                            </div>
-                            <div class="col-md mb-4">
-                                <input type="checkbox" id="news" name="news" class="form-check-input mx-2">
-                                <label for="news">Je souhaite recevoir régulièrement des newsletter</label>
-                            </div>
-                            <br>
-                            <div class="mb-5">
-                                <button class="btn btn-success float-right" type="button" id="submit">Envoyer</button>
-                                <button class="btn btn-danger float-right mx-4" type="button" id="prev3">Précédent</button>
-                            </div>
                         </form>
 
                     </div>
@@ -308,7 +349,9 @@
 
 
 
+    <script src="./js/jquery.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/donSteps.js"></script>
     <script src="./js/dons.js"></script>
     
 </body>
