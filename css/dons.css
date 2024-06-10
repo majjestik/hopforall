@@ -113,7 +113,17 @@ span.error {
     color: var(--danger);
 }
 
-#stepBtns button:nth-of-type(2) {
+/* #stepBtns button:nth-of-type(2), #stepBtns button:nth-of-type(3) {
     display: none;
+} */
+
+/* .step {
+    display: none;
+} */
+
+form .error {
+    color: var(--danger);
+    font-size: 12px;
 }
+
 

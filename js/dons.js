@@ -34,8 +34,8 @@ function enableSubmit() {
 
     if(isValid) {
         next1.disabled = false;
-        next1.addEventListener('click', nextOne);
-        prev1.addEventListener('click', prevOne);
+        // next1.addEventListener('click', nextOne);
+        // prev1.addEventListener('click', prevOne);
     }
     else {
         next1.disabled = true;
@@ -56,11 +56,11 @@ function enableSubmit2() {
 
     if(isValid) {
         next2.disabled = false;
-        next2.addEventListener('click', nextTwo);
-        next3.addEventListener('click', nextThree);
-        prev1.addEventListener('click', prevOne);
-        prev2.addEventListener('click', prevTwo);
-        prev3.addEventListener('click', prevThree);
+        // next2.addEventListener('click', nextTwo);
+        // next3.addEventListener('click', nextThree);
+        // prev1.addEventListener('click', prevOne);
+        // prev2.addEventListener('click', prevTwo);
+        // prev3.addEventListener('click', prevThree);
     }
     else {
         next2.disabled = true;
@@ -86,42 +86,73 @@ function enableSubmit3() {
 
 }
 
+// VALIDATE FORM1
 
+$(document).ready(function() {
+    $('#next1').click(function() {
+        let civilite = $('#civilite').val();
+        let nomDon = $('#nomDon').val();
+        let prenomDon = $('#prenomDon').val();
+        let telephone = $('#telephone').val();
+        let emailDon = $('#emailDon').val();
+        let ville = $('#ville').val();
+        let pays = $('#pays').val();
 
-// $(document).ready(function () {
-//     // console.log(form1.classList.value);
-//     if ($('#form1').hasClass('d-block')) {
+        $('#nomErr').html('');
+        $('#prenomErr').html('');
+        $('#telErr').html('');
+        $('#emailErr').html('');
+        $('#villeErr').html('');
+        $('#paysErr').html('');
+
+        let pattern = /^[A-Za-z]+$/;
+        let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let telRegex = /^[0-9]{9}$/;
+        let errors = false;
 
         
+        if(!pattern.test(pays)) {
+            errors = true;
+            $('#paysErr').html('Veuillez entrer un pays valide');
+        }
+        else if(!pattern.test(ville)) {
+            errors = true;
+            $('#villeErr').html('Veuillez entrer un ville valide');
+        }
+        else if(!emailRegex.test(emailDon)) {
+            errors = true;
+            $('#emailErr').html('Veuillez entrer une email valide');
+        }
+        else if(!telRegex.test(telephone)) {
+            errors = true;
+            $('#telErr').html('Le numéro doit avoir 9 chiffres');
+        }
+        else if(!pattern.test(prenomDon)) {
+            errors = true;
+            $('#prenomErr').html('Veuillez entrer un prenom valide');
+        }
+        else if(!pattern.test(nomDon)) {
+            errors = true;
+            $('#nomErr').html('Veuillez entrer un nom valide');
+        }
+        else {
+            errors = false;
+
+        }
+
+        if(errors == false) {
+            next1.addEventListener('click', nextOne);
+            prev1.addEventListener('click', prevOne);
+        }
+        else {
+            errors = true;
+
+            next1.disabled = true;
+        }
 
 
-
-
-
-//     }
-
-// });
-
-function checkUser() {
-    let nomDon = $('#nomDom').val();
-    let pattern = /^[a-zA-Z-é'\s]+$/;
-    let validateNom = pattern.test(nomDon);
-
-    if ($('#nomDon').val().length == "") {
-        $('#nomErr').html('Veuillez entrer votre nom');
-        return false;
-    }
-    else if (!validateNom) {
-        $('#nomErr').html('Veuillez entrer un nom valide')
-        return false;
-    }
-    else {
-        $('#nomErr').html('');
-        console.log(nomDon);
-        return true;
-    }
-}
-
+    });
+});
 
 
 

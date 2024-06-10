@@ -4,9 +4,13 @@
         session_start();
     }
 
-    require_once './includes/autoloader.inc.php';
+    require_once './classes/Donate.class.php';
 
     $check = new Donate();
+
+    if(isset($_POST['donner'])) {
+        $check->submitDonForm();
+    }
 
     
 ?>
@@ -23,6 +27,7 @@
     <title> FAIRE UN DON - HOP FOR ALL</title>
 </head>
 <body>
+
     <!-- NAVBAR  -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="meine-navbar-2">
@@ -100,7 +105,7 @@
 
 
                     <div class="col-md">
-                        <div class="" >
+                        <div class=" d-none" >
                             <div class="progress_container">
                                 <div class="progress" id="progress"></div>
                                 <div class="circle active-circle">1</div>
@@ -110,14 +115,43 @@
                             </div>
                         </div>
                         
-                        <form class="col-lg-10 offset-lg-1" id="donForm">
+                        <form class="col-lg-10 offset-lg-1" id="donForm" method="POST" action="">
+
+                            <!--    DISPLAY RESULT  -->
+                            <div class="col-md-12 text-center justify-content-center d-flex">
+                                        <?php  
+                                            if(!empty($check->error)) {
+                                                echo "
+                                                    <div class='alert alert-danger alert-dismissable fade show' role='alert'>
+                                                        $check->error 
+                                                        <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                            <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                        </button>
+                                                    </div>
+                                                ";
+                                            }
+                                            else {
+                                                if(!empty($check->message)) {
+                                                    echo "
+                                                        <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                                                            $check->message 
+                                                            <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                                <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                            </button>
+                                                        </div>
+                                                    ";
+                                                }
+                                            }
+                                        ?>
+                                    </div>
+
 
                             <!-- STEP 1 -->
-                            <section id="form1" class="d-block">
+                            <section id="form1" class="step">
                                 <div class="inner">
                                     <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Vos coordonnées</h5>
 
-                                    <div id="result"></div>
+                                    <div id="result" class="text-center text-success my-3"></div>
 
                                     <div class="row">
                                         <div class="col-lg-2 mb-4">
@@ -132,61 +166,59 @@
                                         </div>
                                         <div class="col-lg-5 mb-4">
                                             <label for="nomDon" class="form-label">Nom</label>
-                                            <input type="text" class="form-control req1" placeholder="Nom" id="nomDon" onkeyup="enableSubmit()" name="nomDon">
+                                            <input type="text" class="form-control req1" placeholder="Nom" id="nomDon" name="nomDon">
                                             <span class="error" id="nomErr"></span>
                                         </div>
                                         <div class="col-lg-5 mb-4">
                                             <label for="prenomDon" class="form-label">Prénom</label>
-                                            <input type="text" class="form-control req1" placeholder="Prénom" id="prenomDon" onkeyup="enableSubmit()" name="prenomDon">
+                                            <input type="text" class="form-control req1" placeholder="Prénom" id="prenomDon" name="prenomDon">
                                             <span class="error" id="prenomErr"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label for="telephone" class="form-label">Téléphone</label>
-                                            <input type="number" placeholder="690000000" class="form-control req1" id="telephone" onkeyup="enableSubmit()" name="telephone">
+                                            <input type="number" placeholder="690000000" class="form-control req1" id="telephone" name="telephone">
                                             <span class="error" id="telErr"></span>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label for="Don" class="form-label">Email</label>
-                                            <input type="email" placeholder="monemail@email.com" class="form-control req1" id="emailDon" onkeyup="enableSubmit()" name="emailDon">
+                                            <input type="email" placeholder="monemail@email.com" class="form-control req1" id="emailDon" name="emailDon">
                                             <span class="error" id="emailErr"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label for="ville" class="form-label">Ville</label>
-                                            <input type="text" placeholder="Ville" class="form-control req1" id="ville" onkeyup="enableSubmit()" name="ville">
+                                            <input type="text" placeholder="Ville" class="form-control req1" id="ville" name="ville">
                                             <span class="error" id="villeErr"></span>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label for="pays" class="form-label">Pays</label>
-                                            <input type="text" placeholder="Pays" class="form-control req1" id="pays" onkeyup="enableSubmit()" name="pays">
+                                            <input type="text" placeholder="Pays" class="form-control req1" id="pays" name="pays">
                                             <span class="error" id="paysErr"></span>
                                         </div>
                                     </div>
                                     
-                                    <br>
+                                    <!-- <br>
                                     <div class="mb-3">
-                                        <button class="btn btn-primary float-right " type="button" id="next1" disabled="disabled" >
+                                        <button class="btn btn-primary float-right " type="button" id="next1" >
                                             Suivant
                                         </button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
 
                             <!-- STEP 2 -->
-                            <section id="form2" class="d-none">
+                            <section id="form2" class="step">
                                 <div class="inner">
-                                    <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations supplémentaires</h5>
-
-                                    <div id="result"></div>
+                                    <h5 class="montserrat-sm my-5 text-center text-uppercase"> Informations supplémentaires</h5>
 
                                     <div class="col-lg-12 mb-4">
                                         <label for="raison" class="form-label">
                                             Comment avez-vous entendu parlé de HOP FOR ALL et pourquoi faire un don ?
                                         </label>
-                                        <textarea name="raison" id="raison" class="form-control req2" onkeyup="enableSubmit2()" rows="5"></textarea>
+                                        <textarea name="raison" id="raison" class="form-control req2" rows="5"></textarea>
                                         <span class="error" id="raisonErr"></span>
                                     </div>
                                     <div class="col-lg-12 mb-4">
@@ -198,39 +230,37 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-12 mb-4" id="destination">
-                                        <label for="destination" class="form-label">Destination de votre don</label>
+                                        <label for="destination" class="form-label">Destination de votre don</label><br>
+                                        <span class="error" id="destinationErr"></span>
                                         <br>
                                         <div class="mb-3 mb-md-0">
                                             <span class="">
-                                                <input type="checkbox" onchange="enableSubmit2()" name="destination" value="enfants" class="form-check-input mb-3 mx-2">
+                                                <input type="checkbox" name="destination" value="enfants" class="form-check-input mb-3 mx-2">
                                             </span> 
                                             <span class="">
                                                 Enfants (de la rue, délaissés, abandonnés, victimes du VIH etc…)
                                             </span>
                                         </div>
-                                        <span class="error" id="destinationErr"></span>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="femmes" class="form-check-input mb-3 mx-2"> Femmes en situation de précarité <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="detenu" class="form-check-input mb-3 mx-2"> Personnes incarcérées <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="kit" class="form-check-input mb-3 mx-2"> Kit de survie <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="accompagnement" class="form-check-input mb-3 mx-2"> Accompagnement social <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="educ" class="form-check-input mb-3 mx-2"> Education & Santé <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="projet" class="form-check-input mb-3 mx-2"> Projet et gestion de l'association <br>
-                                        <input type="checkbox" onchange="enableSubmit2()" name="destination" value="autres" class="form-check-input mb-3 mx-2"> Autres <br>
+                                        <input type="checkbox" name="destination" value="femmes" class="form-check-input mb-3 mx-2"> Femmes en situation de précarité <br>
+                                        <input type="checkbox" name="destination" value="detenu" class="form-check-input mb-3 mx-2"> Personnes incarcérées <br>
+                                        <input type="checkbox" name="destination" value="kit" class="form-check-input mb-3 mx-2"> Kit de survie <br>
+                                        <input type="checkbox" name="destination" value="accompagnement" class="form-check-input mb-3 mx-2"> Accompagnement social <br>
+                                        <input type="checkbox" name="destination" value="educ" class="form-check-input mb-3 mx-2"> Education & Santé <br>
+                                        <input type="checkbox" name="destination" value="projet" class="form-check-input mb-3 mx-2"> Projet et gestion de l'association <br>
+                                        <input type="checkbox" name="destination" value="autres" class="form-check-input mb-3 mx-2"> Autres <br>
                                     </div>
 
-                                    <div class="mb-5">
-                                        <button class="btn btn-primary float-right" type="button" id="next2" disabled="disabled">Suivant</button>
+                                    <!-- <div class="mb-5">
+                                        <button class="btn btn-primary float-right" type="button" id="next2">Suivant</button>
                                         <button class="btn btn-danger float-right mx-4" type="button" id="prev1">Précédent</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
 
                             <!-- STEP 3 -->
-                            <section id="form3" class="d-none">
+                            <section id="form3" class="step">
                                 <div class="inner">
-                                    <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Informations des comptes</h5>
-
-                                    <div id="result"></div>
+                                    <h5 class="montserrat-sm mb-3 text-center text-uppercase"> Informations des comptes</h5>
 
                                     <div class="row text-center my-5">
                                         <p class="text-center italic mb-5">
@@ -277,19 +307,17 @@
                                         </p>
                                     </div>
                                     <br>
-                                    <div class="mb-5">
+                                    <!-- <div class="mb-5">
                                         <button class="btn btn-primary float-right" type="button" id="next3">Suivant</button>
                                         <button class="btn btn-danger float-right mx-4" type="button" id="prev2">Précédent</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
 
                             <!-- STEP 4 -->
-                            <section id="form4" class="d-none">
+                            <section id="form4" class="step">
                                 <div class="inner">
-                                    <h5 class="montserrat-sm mb-5 text-center text-uppercase"> Validation du don</h5>
-
-                                    <div id="result"></div>
+                                    <h5 class="montserrat-sm mb-3 text-center text-uppercase"> Validation du don</h5>
 
                                     <br>
                                     <p class="text-center italic mb-5">
@@ -297,7 +325,8 @@
                                     </p>
                                     <div class="col-md my-5">
                                         <label for="idTransaction" class="form-label">ID de la transaction</label>
-                                        <input type="text" class="form-control" placeholder="ID de la transaction" id="idTransaction" name="idTransaction" onkeyup="enableSubmit3()">
+                                        <input type="text" class="form-control" placeholder="ID de la transaction" id="idTransaction" name="idTransaction" >
+                                        <span class="error" id="transErr"></span>
                                     </div>
                                     <div class="col-md mb-4">
                                         <input type="checkbox" id="anonyme" name="anonyme" class="form-check-input mx-2">
@@ -308,19 +337,20 @@
                                         <label for="souscription">Je souhaite recevoir régulièrement des newsletter</label>
                                     </div>
                                     <br>
-                                    <div class="mb-5">
-                                        <button class="btn btn-success float-right" type="submit" id="donner" name="donner" disabled="disabled">
+                                    <!-- <div class="mb-5">
+                                        <button class="btn btn-success float-right" type="submit" id="donner" name="donner">
                                             Donner
                                         </button>
                                         <button class="btn btn-danger float-right mx-4" type="button" id="prev3">Précédent</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
 
-                            <!-- <div class="mb-5" id="stepBtns">
-                                <button class="btn btn-primary float-right" type="button" id="next">Suivant</button>
-                                <button class="btn btn-danger float-right mx-4" type="button" id="prev">Précédent</button>
-                            </div> -->
+                            <div class="mb-5" id="stepBtns">
+                                <button class="btn btn-success float-right" type="submit" id="donner" name="donner">
+                                    Donner
+                                </button>
+                            </div>
                             
                         </form>
 
@@ -365,8 +395,10 @@
 
 
     <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/additional-methods.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/dons.js"></script>
+    <script src="./js/donForm.js"></script>
     
 </body>
 </html>
