@@ -18,9 +18,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Bienvenue sur le site officiel de l'Association HOP FOR ALL. Exprimez votre générosité et solidarité aux causes de HOP FOR ALL.">
+    <meta name="keywords" content="Enfants de la rue, Enfants délaissés, enfants abandonnés, enfants victimes du VIH/SIDA, Femmes ensituation de précarité, femmes maltraitées, femmes en situation d'exclusion, Detenus, personnes incarcérées, prisoniers, kit de survie, accompagnement social, education et santé,  projets et gestion de l'association">
+    <meta name="author" content="Guene Joseph">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/cookiebanner.style.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/aos.css">
     <title>ACCUEIL - HOP for All</title>
@@ -84,11 +88,6 @@
                     <h1 id="welcome-text" data-aos="zoom-in" data-aos-duration="2000" class="">
                         Bienvenue sur notre site
                     </h1> 
-                    <!-- <p class="lead"  data-aos="fade-left" data-aos-delay="500" data-aos-duration="3000"
-                        data-aos-easing="ease-in-sine"
-                    >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam quidem, labore omnis ipsam natus, pariatur quam, dolore iusto voluptatem nihil! Impedit quaerat tempore minima quasi consequatur ullam, deleniti omnis!
-                    </p> -->
                 </div>
             </div>
         </section>
@@ -569,64 +568,7 @@
                 </div>
             </section>
 
-            <!--<section id="section-4">
-                <div class="container">
-                    <div class="row mb-3">
-                        <div class="col-md">
-                            <h3 id="block-title">Nos causes</h3>
-                            <div class="block-title-underline"></div>
-                        </div>
-                    </div>
-                    <div class="row align-items-center justify-content-between" id="carousel-row">
-                        <div id="carouselExampleCaptions" class="carousel slide"
-                            data-bs-ride="carousel"
-                        >
-                            <div class="carousel-indicators">
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
-                                <div class="carousel-caption d-none d-md-block text-warning">
-                                  <h5 class="montserrat-b">Ma cause</h5>
-                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question first slide.</p>
-                                </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
-                                <div class="carousel-caption d-none d-md-block text-warning">
-                                  <h5 class="montserrat-b">SMa cause</h5>
-                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question second slide.</p>
-                                </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="./img/wallpaper.jpg" class="d-block w-75 mx-auto" alt="...">
-                                <div class="carousel-caption d-none d-md-block text-warning">
-                                  <h5 class="montserrat-b">Ma cause</h5>
-                                  <p class="montserrat-sm">Quelques mots pour décrire la cause en question third slide.</p>
-                                </div>
-                              </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                              <span class="bg-dark carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                              <span class="bg-dark carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row text-justify w-75 mx-auto">
-                        <p class="my-5">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis laboriosam vero ratione veritatis quidem, cum, alias voluptatum eligendi facilis fugiat tenetur consequuntur dignissimos, nemo quia itaque ducimus nobis labore.
-                        </p>
-                    </div>
-                </div>
-            </section> -->
-
+            
             <!--  PROJETS  -->
             <section id="section-6" class="my-5 bg-light-blue p-5">
                 <div class="container">
@@ -715,42 +657,7 @@
                 </div>
             </section>
 
-            <!-- <section id="section-7">
-                <div class="container p-5 my-5">
-                    <div class="row mb-3">
-                        <div class="col-md">
-                            <h3 id="block-title">Nos partenaires</h3>
-                            <div class="block-title-underline"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                        <div class="col-md-3 col-lg-2 mb-5">
-                            <img src="./img/hop-logo.jpg" alt="" class="w-75 rounded-circle bg-primary">
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <h6 class="montserrat-sm text-uppercase">
-                            En agissant, vous oeuvrez activement pour donner de l'espoir aux desesperes
-                        </h6>
-                    </div>
-                </div>
-            </section> -->
-
+            
 
 
             <footer class="footer-block">
@@ -794,9 +701,15 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/cookiebanner.script.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/newsletterJS.js"></script>
     <script src="./js/aos.js"></script>
     <script>AOS.init();</script>
+    <script>
+        $(document).ready(function() {
+            cookieBanner.init();
+        });
+    </script>
 </body>
 </html>

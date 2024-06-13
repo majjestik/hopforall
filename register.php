@@ -19,12 +19,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Devenir un membre ou volontaire de HOP FOR ALL. S'inscrire.">
+    <meta name="keywords" content="Enfants de la rue, Enfants délaissés, enfants abandonnés, enfants victimes du VIH/SIDA, Femmes ensituation de précarité, femmes maltraitées, femmes en situation d'exclusion, Detenus, personnes incarcérées, prisoniers, kit de survie, accompagnement social, education et santé,  projets et gestion de l'association">
+    <meta name="author" content="Guene Joseph">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/connect.css">
-    <title>S'INSCRIRE - HOP FOR ALL</title>
+    <title>S'inscrire - HOP FOR ALL | hopforall.com</title>
 </head>
 <body>
     <!-- NAVBAR  -->

@@ -19,12 +19,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Exprimez votre générosité et solidarité aux causes de HOP FOR ALL. Faire un don.">
+    <meta name="keywords" content="Enfants de la rue, Enfants délaissés, enfants abandonnés, enfants victimes du VIH/SIDA, Femmes ensituation de précarité, femmes maltraitées, femmes en situation d'exclusion, Detenus, personnes incarcérées, prisoniers, kit de survie, accompagnement social, education et santé,  projets et gestion de l'association">
+    <meta name="author" content="Guene Joseph">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/dons.css">
-    <title> FAIRE UN DON - HOP FOR ALL</title>
+    <title> Faire un Don - HOP FOR ALL | hopforall.com</title>
 </head>
 <body>
 
@@ -166,36 +169,48 @@
                                         </div>
                                         <div class="col-lg-5 mb-4">
                                             <label for="nomDon" class="form-label">Nom</label>
-                                            <input type="text" class="form-control req1" placeholder="Nom" id="nomDon" name="nomDon">
+                                            <input type="text" class="form-control text-capitalize" placeholder="Nom" id="nomDon" name="nomDon"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['nomDon']; ?>"
+                                            >
                                             <span class="error" id="nomErr"></span>
                                         </div>
                                         <div class="col-lg-5 mb-4">
                                             <label for="prenomDon" class="form-label">Prénom</label>
-                                            <input type="text" class="form-control req1" placeholder="Prénom" id="prenomDon" name="prenomDon">
+                                            <input type="text" class="form-control text-capitalize" placeholder="Prénom" id="prenomDon" name="prenomDon"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['prenomDon']; ?>"
+                                            >
                                             <span class="error" id="prenomErr"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label for="telephone" class="form-label">Téléphone</label>
-                                            <input type="number" placeholder="690000000" class="form-control req1" id="telephone" name="telephone">
+                                            <input type="number" placeholder="690000000" class="form-control text-capitalize" id="telephone" name="telephone"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['telephone']; ?>"
+                                            >
                                             <span class="error" id="telErr"></span>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label for="Don" class="form-label">Email</label>
-                                            <input type="email" placeholder="monemail@email.com" class="form-control req1" id="emailDon" name="emailDon">
+                                            <input type="email" placeholder="monemail@email.com" class="form-control" id="emailDon" name="emailDon"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['emailDon']; ?>"
+                                            >
                                             <span class="error" id="emailErr"></span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mb-4">
                                             <label for="ville" class="form-label">Ville</label>
-                                            <input type="text" placeholder="Ville" class="form-control req1" id="ville" name="ville">
+                                            <input type="text" placeholder="Ville" class="form-control text-capitalize" id="ville" name="ville"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['ville']; ?>"
+                                            >
                                             <span class="error" id="villeErr"></span>
                                         </div>
                                         <div class="col-lg-6 mb-4">
                                             <label for="pays" class="form-label">Pays</label>
-                                            <input type="text" placeholder="Pays" class="form-control req1" id="pays" name="pays">
+                                            <input type="text" placeholder="Pays" class="form-control text-capitalize" id="pays" name="pays"
+                                            value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['pays']; ?>"
+                                            >
                                             <span class="error" id="paysErr"></span>
                                         </div>
                                     </div>
@@ -218,7 +233,9 @@
                                         <label for="raison" class="form-label">
                                             Comment avez-vous entendu parlé de HOP FOR ALL et pourquoi faire un don ?
                                         </label>
-                                        <textarea name="raison" id="raison" class="form-control req2" rows="5"></textarea>
+                                        <textarea name="raison" id="raison" class="form-control req2" rows="5"
+                                        value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['raison']; ?>"
+                                        ></textarea>
                                         <span class="error" id="raisonErr"></span>
                                     </div>
                                     <div class="col-lg-12 mb-4">
@@ -325,7 +342,9 @@
                                     </p>
                                     <div class="col-md my-5">
                                         <label for="idTransaction" class="form-label">ID de la transaction</label>
-                                        <input type="text" class="form-control" placeholder="ID de la transaction" id="idTransaction" name="idTransaction" >
+                                        <input type="text" class="form-control" placeholder="ID de la transaction" id="idTransaction" name="idTransaction" 
+                                        value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['idTransaction']; ?>"
+                                        >
                                         <span class="error" id="transErr"></span>
                                     </div>
                                     <div class="col-md mb-4">
