@@ -348,6 +348,7 @@
                             <h6 class="montserrat-sm text-uppercase">Mot du Fondateur</h6>
 
                             <div class="montserrat-reg mt-5 text-justify">
+                                <img src="./images/romain_dingao.jpeg" alt="Photo de romain dingao" class="img-fluid rounded mb-3" width="150px" height="150px" />
                                 <p>
                                     Chers visiteurs, 
                                     <br><br>

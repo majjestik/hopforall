@@ -14,7 +14,9 @@
         <div class="row">
             <div class="col-md-12 montserrat-sm text-center  my-5 p-5">
                 <h4 class="text-success">Merci pour votre générosité ! Que DIEU vous bénisse  </h4>
-                <?php header('Refresh: 5; dons.php') ?>
+                <p>
+                    <a href="dons.php">Retour</a>
+                </p>
             </div>
         </div>
     </div>

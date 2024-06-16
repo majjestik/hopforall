@@ -81,7 +81,7 @@
                         <h4 class=" mb-4 text-center text-uppercase montserrat-b"> Mot de passe oublié</h4>
 
                         <!--    DISPLAY RESULT  -->
-                        <div class="col-md-12 text-center justify-content-center d-flex">
+                        <div class="col-md-12 text-center justify-content-center d-flex align-items-center">
                             <?php  
                                 if(!empty($check->error)) {
                                     echo "
@@ -96,12 +96,26 @@
                                 else {
                                     if(!empty($check->message)) {
                                         echo "
-                                            <div class='alert alert-success alert-dismissable fade show' role='alert'>
-                                                $check->message 
-                                                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
-                                                    <span aria-hidden='true' class='ml-3'>&times;</span>
-                                                </button>
+                                            <div class='row d-flex justify-content-center align-items-center'>
+                                                <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                                                    $check->message 
+                                                    <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'>
+                                                        <span aria-hidden='true' class='ml-3'>&times;</span>
+                                                    </button>
+                                                </div>
+                                                
+                                                <div class='col-md-12'>
+                                                    <p>
+                                                        Cliquez <a href='entrerOTP.php'>ici</a> pour insérer le code OTP
+                                                    </p>
+                                                </div>
                                             </div>
+                                        ";
+
+                                        echo "
+                                            <p>
+                                                Cliquez <a href='entrerOTP.php'>ici</a> pour insérer le code OTP
+                                            </p>
                                         ";
                                     }
                                 }

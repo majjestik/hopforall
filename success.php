@@ -17,9 +17,8 @@
                 <p>
                     Vous serez notifié par email une fois que vos accès seront activé ! <br>
                     
-                    En attendant, vous allez être redirigé vers la page d'accueil...
+                    En attendant, vous pouvez retourner à la page d'acceuil en cliquant <a href="index.php" class="btn btn-primary"> <i class="bi bi-house-fill"></i> Accueil</a>
                 </p>
-                <?php header('Refresh: 10; index.php') ?>
             </div>
         </div>
     </div>

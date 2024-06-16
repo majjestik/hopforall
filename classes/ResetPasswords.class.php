@@ -88,7 +88,6 @@
                     $mail->send();
                     $this->message = "Votre code OTP a été envoyé... Consultez votre boîte mail";
 
-                    header('Location: entrerOTP.php');
 
 
                 } catch (Exception $e) {

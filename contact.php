@@ -236,21 +236,25 @@
                         <p class="montserrat-sm mb-5">
                             Un préoccupation particulière, laissez nous un message !
                         </p>
-                        <form action="" method="post">
+                        <form action="https://formsubmit.co/hopfoall237@gmail.com" method="POST">
                             <div class="mb-3">
-                                <label for="" class="form-label montserrat-sm">Nom</label>
-                                <input type="text" class="form-control" id="" placeholder="Votre nom">
+                                <label for="name" class="form-label montserrat-sm">Nom</label>
+                                <input type="text" name="name" required class="form-control" id="" placeholder="Votre nom">
+                            </div>
+                            <div class= "mb-3">
+                                <label for="email" class="form-label montserrat-sm">Adresse email</label>
+                                <input type="email" name="email" required class="form-control" id="" placeholder="name@example.com">
                             </div>
                             <div class="mb-3">
-                                <label for="" class="form-label montserrat-sm">Adresse email</label>
-                                <input type="email" class="form-control" id="" placeholder="name@example.com">
+                                <label for="objet" class="form-label montserrat-sm">Objet</label>
+                                <input type="text" name="objet" required class="form-control" id="" placeholder="Objet du message">
                             </div>
                             <div class="mb-3">
-                                <label for="" class="form-label montserrat-sm">Message</label>
-                                <textarea class="form-control" id="" rows="3" placeholder="Votre message"></textarea>
+                                <label for="message" class="form-label montserrat-sm">Message</label>
+                                <textarea class="form-control" required name="message" id="" rows="3" placeholder="Votre message"></textarea>
                             </div>
 
-                            <button type="button" class="btn btn-primary w-100 mt-3">
+                            <button type="submit" name="envoyer" class="btn btn-primary w-100 mt-3">
                                 <i class="h6 bi bi-send-fill"></i> Envoyer
                             </button>
                         </form>
